@@ -1,9 +1,14 @@
+## Questions
 
-Describe yourself.
-Discuss your resume.
-Discuss your educational background.
+- Describe yourself.
+- Discuss your resume.
+- Discuss your educational background.
+- Tell us about your last experience 
+- What are you most proud of in your working career?
 
-What are some of your leadership experiences?
-What would your direct reports say about you?
-What were your bosses’ strengths/weaknesses?
-What do you like the most and least about working in this industry?
+## Follow-ups
+
+- What were your bosses’ strengths/weaknesses?
+- What did you like the most and least on that work experience?
+- What is the biggest contribution you made in your current role?
+
