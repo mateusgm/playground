@@ -7,5 +7,6 @@
 - Find the common elements of 2 int arrays
 - Implement binary search of a sorted array of integers
 - Implement binary search in a rotated array (ex. {5,6,7,8,1,2,3})
+- Merge sorted Array B into sorted Array A
 
 
