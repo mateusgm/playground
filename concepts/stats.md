@@ -1,8 +1,3 @@
-## Data analysis
-
-Data Dredging
-
-Simpsons's Paradox
 
 ## Statistics
 
@@ -15,8 +10,3 @@ Distributions
 - Poisson - unbounded counts
 
 Hypothesis testing
-
-## Learning
-
-Bias-variance trade-off
-
