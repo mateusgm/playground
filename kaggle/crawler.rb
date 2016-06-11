@@ -13,7 +13,7 @@ def number(str)
 end
 
 CSV.open('competitions.csv', 'wb') do |csv|
-  csv << [ 'name', 'link', 'prize', 'contestants', 'forum', 'scripts', 'votes', 'best_voted' ]
+  csv << [ 'name', 'link', 'prize', 'contestants', 'forum', 'replies', 'best_replies', 'best_urls', 'scripts', 'votes', 'best_voted' ]
 end
 
 html = Nokogiri::HTML( open(URL) )
@@ -50,11 +50,24 @@ competitions.each do |x|
   doc = open(x[:link] + '/forums', PARAMS ) rescue false 
   if doc
     html = Nokogiri::HTML( doc )
-    link = html.css('.topiclist .forum-pages a').map { |x| "#{KADDLE}/#{x['href']}" }
-    x[:best_replied] =
+    n_pages = html.css('#topiclist .forum-pages a')[-2].text.to_i rescue 1
+    replies = n_pages.times.map do |i|
+      url =  "#{x[:link]}/forums?page=#{i+1}"
+      forum = Nokogiri::HTML( open(url, PARAMS) )
+      forum.css('.topiclist-topic').map do |t|
+        {
+          url: t.css('h3 a').first['href'],
+          replies: t.css('.replies-col').first.text.to_i
+        }
+      end
+    end.flatten
+    replies = replies.sort_by { |x| x[:replies] }.reverse
+    x[:best_replied] = replies.take(5).map { |x| x[:replies] }
+    x[:best_urls] = replies.take(5).map { |x| x[:url] }
+    x[:replies] = replies.map { |x| x[:replies] }.reduce(0, :+)
   end
 
   CSV.open('competitions.csv', 'ab') do |csv| 
-    csv << [ x[:name], x[:link], x[:prize], x[:contestants], x[:forum], x[:scripts], x[:votes], x[:best_voted].to_s ]
+    csv << [ x[:name], x[:link], x[:prize], x[:contestants], x[:forum], x[:replies], x[:best_replied].to_s, x[:best_urls].to_s, x[:scripts], x[:votes], x[:best_voted].to_s ]
   end
 end
