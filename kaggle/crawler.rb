@@ -3,6 +3,11 @@ require 'open-uri'
 require 'csv'
 require 'openssl'
 
+def number(str)
+  n = str.to_s[/[\d\.,]+/]
+  n.gsub(',', '').to_i unless n.nil?
+end
+
 CSV.open('competitions.csv', 'wb') do |csv|
   csv << [ 'name', 'link', 'prize', 'contestants', 'forum', 'scripts', 'best_voted' ]
 end
@@ -18,8 +23,8 @@ competitions = html.css('#competitions-table tr.finished-comp').map do |x|
   url = "https:" + url           if url['//']
   {
     name: x.css('.competition-details a').first.text,
-    prize: x.css('td')[1].text,
-    contestants: x.css('td')[2].text,
+    prize: number(x.css('td')[1].text),
+    contestants: number(x.css('td')[2].text),
     link: url
   }
 end
@@ -28,13 +33,13 @@ competitions.each do |x|
   print x[:name], "\n"
   doc  = open(x[:link], PARAMS).read
   html = Nokogiri::HTML( doc )
-  x[:forum] = html.css('#compside-discussions h1').first.text[/\d+/] rescue ''
+  x[:forum] = number html.css('#compside-discussions h1').first rescue ''
  
   id   = doc.scan(/competitionId = (\d+)/).flatten.first
   doc = open( "https://www.kaggle.com/c/#{id}/scripts/hot/widget", PARAMS ) rescue false 
   if doc
     html = Nokogiri::HTML( doc )
-    x[:scripts] = html.css('#compside-scripts h1').first.text[/\d+/]
+    x[:scripts] = number html.css('#compside-scripts h1').first.text
     x[:best_voted] = html.css('#compside-scripts .script-meta').map { |x| x.text.scan(/(\d+) Votes/).first }.flatten.map(&:to_i)
   end
   
