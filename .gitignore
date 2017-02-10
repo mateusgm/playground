@@ -3,3 +3,5 @@
 *.zip
 *.gz
 *.tsv
+*.pyc
+.DS_Store
