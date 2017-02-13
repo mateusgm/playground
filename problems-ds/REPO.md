@@ -1,0 +1,11 @@
+## Areas
+
+1. What is the curse of higher dimensionality? What is the difference between density-sparse data and dimensionally-sparse data? What does "higher dimensionality" imply when applying textbook clustering algorithms developed for low dimension metric spaces to, say, numerical text analysis? Think of using cluster density to identify "good" clusters.
+2. Probability space: How do you compare probabilities? Probability space is often referred to as a "vector space", is it? Define addition on this space? Is ds^2 = dp^2 a good metric on probability space? How would you construct a metric on probability space, so you can start doing complicated things like L2 norm etc.?
+3. Regression: What is regression? What are the principal choices involved? What is linear about linear regression?
+4. Logistic regression: Explain Logistic Regression to an economist, biologist or physical scientist. You can use the "formula" if you want. Motivate the "formula".
+5. What does the score distribution for logistic regression look like? How would I track it?
+6. How should logistic regression scores be calibrated? What are the dangers of over-fitting in calibration?
+7. Certain third party data providers (DP1, DP2 ...) will identify cookie_ids as belonging to a specific demographic segment, say DP1_S1 = F35-44. To test the accuracy of this assignment, random samples of cookie_ids in these segments are measured against an industry standard source of "ground truth". This will yield data like "40% of the cookie_ids that DP1 identifies as in S1 are actually (according to "ground truth") in F35-44" and "30% of the cookie_ids that DP2 identifies as in S5 are actually (according to "ground truth") in F35-44". Given the above, what is the probability that a cookie_id that is in both DP1_S1 and DP2_S5 will be found to be in F35-44 according to the industry standard source of ground truth?
+8. The x and y are two random variables and their standard errors are known. How can you calculate/estimate the standard error in f(x,y)? If you want, specifically, in f(x,y) = y/x. How would you do this if you had all the data (x_i, y_i)?
+9. Why should the test and the control group be of the same size in an "A/B" test?
