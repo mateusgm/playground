@@ -11,6 +11,11 @@
 - walk me through how you would approach building a regression model to predict Y given you have data X
 - how do you choose the right number of predictors
 
+
+What are the constraints you need to keep in mind when using a linear regression?
+How does the variance of the error term change with the number of predictors, in OLS?
+In linear regression, under what condition R^2 always equals a perfect 1?
+
 *  How you can fit non-linear relations between X (say, Age) and Y (say, Income) into a Linear Model? - I also expect candidates to show me mathematically the marginal effect of X on Y based on their proposed solution.
 
 ## Time Series

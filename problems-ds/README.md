@@ -23,4 +23,4 @@ http://www.kdnuggets.com/2016/02/21-data-science-interview-questions-answers.htm
 
 https://www.dezyre.com/article/100-data-science-interview-questions-and-answers-general-for-2016/184
 
-
+https://www.analyticsvidhya.com/blog/2016/09/40-interview-questions-asked-at-startups-in-machine-learning-data-science/
