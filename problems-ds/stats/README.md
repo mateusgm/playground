@@ -25,3 +25,12 @@ How do test new concepts or hypotheses in....insert domain X? i.e. How would eva
 How do you create test and control groups?
 How do you control for external factors?
 How do you evaluate results?
+
+
+
+
+The x and y are two random variables and their standard errors are known. How can you calculate/estimate the standard error in f(x,y)? If you want, specifically, in f(x,y) = y/x. How would you do this if you had all the data (x_i, y_i)?
+
+
+
+Why should the test and the control group be of the same size in an "A/B" test?
