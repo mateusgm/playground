@@ -11,36 +11,38 @@ How do you handle outliers or data points that skew data?
 What assumptions can you make? Why and when? (i.e When is it safe to assume "normal")
 
 
-
-## Biases
-
-When you sample, what bias are you inflicting?
+How to efficiently represent 5 dimension in a chart or in a video?
 
 
 
-How do you control for biases?
+How would you handle an imbalanced dataset?
 
 
 
-What are some of the first things that come to mind when I do X in terms of biasing your data?
+How do you handle missing or corrupted data in a dataset?
 
 
 
-## Process
+## Feature selection
 
 How do you select features?
 
 
 
-How do you evaluate a model?
+What are some good ways for performing feature selection that do not involve exhaustive search?
 
 
 
-Train/test/validate sets
+How to apply Machine Learning to audio data, images, texts, graphs, etc?
 
 
 
-Cross-validation
+What to do with categorical variables of high cardinality?
+
+
+
+Can a feature that doesnt help alone, be useful when another feature is added?
+
 
 
 
@@ -58,7 +60,17 @@ What is the difference in the outcome (coefficients) between the L1 and L2 norms
 
 
 
-## Parametric learning
+Why (geometrically) does LASSO produce solutions with zero-valued coefficients (as opposed to ridge)?
+
+
+
+
+Let us go through the derivation of OLS or Logistic Regression. What happens when we add L2L2 regularization? How do the derivations change? What if we replace L2L2 regularization with L1L1 regularization?
+
+
+
+
+## Fitting
 
 What is the Gradient Descent Method (the intuition is mostly enough)?
 
@@ -76,20 +88,23 @@ How maximum likelihood works?
 
 
 
+Whats the difference between convex vs nonconvex?
+
+
+
+Is it always bad to have local optima?
+
+
+
 Whats EM?
 
 
 
-## Scalability
-
-1. What is the curse of higher dimensionality?
+How do you tune hyperparameters? Any method beyond grid search?
 
 
 
-2. What is the difference between density-sparse data and dimensionally-sparse data?
+How Monte Carlo can be used for fitting?
 
-
-
-3. What does "higher dimensionality" imply when applying textbook clustering algorithms developed for low dimension metric spaces to, say, numerical text analysis? Think of using cluster density to identify "good" clusters.
 
 

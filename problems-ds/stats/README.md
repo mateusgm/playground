@@ -1,36 +1,107 @@
 
-## Tests
-
-- t-test
-- chi-square test
-- correlation
-
-## Sampling
-
-Why and when?
-How do you calculate needed sample size? [Power analysis is advanced]
-Limitations
-Bootstrapping and resampling?
-
 ## Inference
 
-*  What is a P-Value ?
-*  How confidence intervals are constructed
-*  Why you standardize
-*  How to interpret
+What is a P-Value ?
+
+
+
+How confidence intervals are constructed
+
+
+
+Why you standardize
+
+
+
+How to interpret
+
+
+
+
+What is tt-Test/FF-Test/ANOVA? When to use it?
+
+
+
+How would you test if two populations have the same mean? What if you have 3 or 4 populations?
+
+
+
+
+You applied ANOVA and it says that the means are different. How do you identify the populations where the differences are significant?
+
+
+
+
+What is the distribution of p-value’s, in general?
+
+
+
+
+## Some special statistics
+
+Chi-square test
+
+
+
+Pearson vs spearman correlation
+
+
+
+## Data shape
+
+Explaing power transforms
+
+
+
+What is Box-Cox transformation? 
+
+
+
+How would you turn unstructured data into structured data?
+
+
+Give examples of data that does not have a Gaussian distribution, or log-normal. Also give examples of data that has a very chaotic distribution?
+
+
+
+How to check if a distribution is close to Normal? Why would you want to check it? What is a QQ Plot?
+
+
+Do you know the Dirichlet distribution? the multinomial distribution? binomial? poisson?
+
+
 
 ## Experimental design
 
-How do test new concepts or hypotheses in....insert domain X? i.e. How would evaluate whether or not consumers like the webpage redesign or new food being served?
+How would evaluate whether or not consumers like the webpage redesign or new food being served?
+
+
+
 How do you create test and control groups?
+
+
+
 How do you control for external factors?
+
+
+
 How do you evaluate results?
 
 
 
-
-The x and y are two random variables and their standard errors are known. How can you calculate/estimate the standard error in f(x,y)? If you want, specifically, in f(x,y) = y/x. How would you do this if you had all the data (x_i, y_i)?
-
-
-
 Why should the test and the control group be of the same size in an "A/B" test?
+
+
+
+Why is randomization important in experimental design?
+
+
+
+---------
+What is A/B testing? How is it different from usual Hypothesis testing?
+How can you prove that one improvement you’ve brought to an algorithm is really an improvement over not doing anything? How familiar are you with A/B testing?
+How can we tell whether our website is improving?
+What are the metrics to evaluate a website? A search engine?
+What kind of metrics would you track for you music streaming website?
+Common metrics: Engagement / retention rate, conversion, similar products / duplicates matching, how to measure them.
+Real-life numbers and intuition: Expected user behavior, reasonable ranges for user signup / retention rate, session length / count, registered / unregistered users, deep / top-level engagement, spam rate, complaint rate, ads efficiency.

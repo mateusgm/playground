@@ -57,21 +57,29 @@ In linear regression, under what condition R^2 always equals a perfect 1?
 
 
 
-How you can fit non-linear relations between X (say, Age) and Y (say, Income) into a Linear Model? - I also expect candidates to show me mathematically the marginal effect of X on Y based on their proposed solution.
+--------
+What is Ordinary Least Squares Regression? How it can be learned?
+Can you derive the OLS Regression formula? (For one-step solution)
+Is model Y∼X1+X2+X1X2Y∼X1+X2+X1X2 still linear? Why?
+Do we always need the intercept term? When do we need it and when do we not?
+What is collinearity and what to do with it? How to remove multicollinearity?
+What if the design matrix is not full rank?
+What is overfitting a regression model? What are ways to avoid it?
+What is Ridge Regression? How is it different from OLS Regression? Why do we need it?
+What is Lasso regression? How is it different from OLS and Ridge?
 
+What are the assumptions required for linear regression?
+What if some of these assumptions are violated?
+Significant features in Regression
 
+You would like to find significant features. How would you do that?
+You fit a multiple regression to examine the effect of a particular feature. The feature comes back insignificant, but you believe it is significant. Why can it happen?
+Your model considers the feature XX significant, and ZZ is not, but you expected the opposite result. Why can it happen?
+Evaluation
 
-## Time Series
+How to check is the regression model fits the data well?
+Other algorithms for regression
 
-p,d,q parameters and how you choose them
-
-
-
-unit root and box test
-
-
-
-if you have a data-set with 100 observations for each Xi, and 3 lag-effect variables of X1, how many predictions will you have if you will run any simple linear regression?
-
-
+Decision trees for regression
+kk-Nearest Neighbors for regression. When to use?
 
