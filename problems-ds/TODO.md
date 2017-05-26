@@ -1,3 +1,6 @@
+TO DO
+=====
+
 Parameter estimation
 - Gradient Descent
 - Expectation Maximization

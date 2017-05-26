@@ -1,3 +1,6 @@
+Modeling
+========
+
 ## Data exploration
 
 How do you summarize the distribution of your data?

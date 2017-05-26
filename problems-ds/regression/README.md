@@ -1,4 +1,5 @@
-## Regression
+Regression
+==========
 
 What are the principal choices involved?
 
@@ -57,29 +58,39 @@ In linear regression, under what condition R^2 always equals a perfect 1?
 
 
 
---------
-What is Ordinary Least Squares Regression? How it can be learned?
-Can you derive the OLS Regression formula? (For one-step solution)
-Is model Y∼X1+X2+X1X2Y∼X1+X2+X1X2 still linear? Why?
-Do we always need the intercept term? When do we need it and when do we not?
-What is collinearity and what to do with it? How to remove multicollinearity?
-What if the design matrix is not full rank?
-What is overfitting a regression model? What are ways to avoid it?
-What is Ridge Regression? How is it different from OLS Regression? Why do we need it?
-What is Lasso regression? How is it different from OLS and Ridge?
-
 What are the assumptions required for linear regression?
-What if some of these assumptions are violated?
-Significant features in Regression
 
-You would like to find significant features. How would you do that?
+
+
+What if some of these assumptions are violated?
+
+
+
+What is Ordinary Least Squares Regression? How it can be learned?
+
+
+
+What is collinearity and what to do with it? How to remove multicollinearity?
+
+
+
+What if the design matrix is not full rank?
+
+
+
 You fit a multiple regression to examine the effect of a particular feature. The feature comes back insignificant, but you believe it is significant. Why can it happen?
+
+
+
 Your model considers the feature XX significant, and ZZ is not, but you expected the opposite result. Why can it happen?
-Evaluation
+
+
 
 How to check is the regression model fits the data well?
-Other algorithms for regression
 
-Decision trees for regression
-kk-Nearest Neighbors for regression. When to use?
+
+
+Other algorithms for regression. When to use?
+
+
 

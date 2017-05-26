@@ -1,3 +1,5 @@
+Stats
+=====
 
 ## Inference
 
@@ -97,11 +99,12 @@ Why is randomization important in experimental design?
 
 
 
----------
-What is A/B testing? How is it different from usual Hypothesis testing?
 How can you prove that one improvement you’ve brought to an algorithm is really an improvement over not doing anything? How familiar are you with A/B testing?
-How can we tell whether our website is improving?
-What are the metrics to evaluate a website? A search engine?
-What kind of metrics would you track for you music streaming website?
-Common metrics: Engagement / retention rate, conversion, similar products / duplicates matching, how to measure them.
-Real-life numbers and intuition: Expected user behavior, reasonable ranges for user signup / retention rate, session length / count, registered / unregistered users, deep / top-level engagement, spam rate, complaint rate, ads efficiency.
+
+
+
+
+How to identify a cause Vs a correlation? Give examples.
+
+
+

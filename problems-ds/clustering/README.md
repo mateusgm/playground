@@ -1,3 +1,5 @@
+Clustering
+==========
 
 ## K-means
 
@@ -28,18 +30,38 @@ How can you modify KK-Means to produce soft class assignments?
 
 
 
+How would you perform clustering in one million unique keywords, assuming you have 10 million data points and each one consists of two keywords and a metric measuring how similar these two keywords are? 
 
-# Topic modeling
 
+
+
+## Topic modeling
 
 Give an example of an application of non-negative matrix factorization
 
 
 
 What is the Vector Space Model?
+
+
+
 What is TF-IDF?
+
+
+
 Which distances and similarity measures can we use to compare documents? What is cosine similarity?
+
+
+
 Why do we remove stop words? When do we not remove them?
+
+
+
 Language Models. What is NN-Grams?
+
+
+
 What is word2vec? How it can be used in NLP and IR?
+
+
 

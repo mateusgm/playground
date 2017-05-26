@@ -1,3 +1,5 @@
+## Puzzles
+
 The mean heights of men and women in a population were calculated to be image00 and image01. What is the mean height of the total population?
 
 
@@ -117,7 +119,13 @@ In a study of emergency room waiting times, investigators consider a new and the
 
 
 
+
 To further test the hospital triage system, administrators selected 200 nights and randomly assigned a new triage system to be used on 100 nights and a standard system on the remaining 100 nights. They calculated the nightly median waiting time (MWT) to see a physician. The average MWT for the new system was 4 hours with a standard deviation of 0.5 hours while the average MWT for the old system was 6 hours with a standard deviation of 2 hours. Consider the hypothesis of a decrease in the mean MWT associated with the new treatment. What does the 95% independent group confidence interval with unequal variances suggest vis a vis this hypothesis? (Because there’s so many observations per group, just use the Z quantile instead of the T.)
+
+
+
+
+You are about to send one million email (marketing campaign). How do you optimize delivery and its response? Can both of these be done separately?
 
 
 

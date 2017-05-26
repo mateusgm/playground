@@ -1,4 +1,4 @@
-## Reduction overview
+## Dimensionality
 
 1. What is the curse of higher dimensionality?
 
@@ -13,15 +13,27 @@
 
 
 What is the purpose of dimensionality reduction and why do we need it?
+
+
+
 Are dimensionality reduction techniques supervised or not? Are all of them are (un)supervised?
+
+
+
 What ways of reducing dimensionality do you know?
+
+
+
 Is feature selection a dimensionality reduction technique?
+
+
+
 What is the difference between feature selection and feature extraction?
+
+
+
 Is it beneficial to perform dimensionality reduction before fitting an SVM? Why or why not?
 
-
-
-## Factorization Machine
 
 
 

@@ -1,4 +1,6 @@
-# MODEL: _________________
+Application
+===========
+model: _________________
 
 Whats the metric the model tries to optimize?
 
