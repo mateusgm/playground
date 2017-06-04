@@ -279,6 +279,9 @@
     - matrix factorization -> highly scalable
 
 
+    +++++++++++++++++++++++++
+
+
 
 17. How do you know if one algorithm is better than other?:
 
@@ -293,7 +296,8 @@
     1. Crossvalidation with a common metric
     2. Analysis of prediction distribution (most metrics are averages)
     3. Prefer the one with smaller complexity (occam razor)
-    4. Live AB testing
+    4. Bootstrap and count number of times one is bette 
+    5. Live AB testing
 
 18. How do you test whether a new credit risk scoring model works?:
 
@@ -364,16 +368,16 @@
 
     - Is it using TF-IDF? Count vectorizer?
     Bin features ( denser data )
-    Ngrams
+    Extract independent vectors
 
 22. What are the drawbacks of linear model? Are you familiar with alternatives (Lasso, ridge regression, boosted trees)?:
 
-    
-
-23. Do you think 50 small decision trees are better than a large one? Why?
 
 
-24. Why is mean square error a bad measure of model performance? What would you suggest instead?
+23. Do you think 50 small decision trees are better than a large one? Why?:
+
+
+24. Why is mean square error a bad measure of model performance? What would you suggest instead?:
 
 
 25.How can you prove that one improvement you’ve brought to an algorithm is really an improvement over not doing anything? Are you familiar with A/B testing?

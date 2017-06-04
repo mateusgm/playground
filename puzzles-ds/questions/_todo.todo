@@ -4,15 +4,19 @@ Stats:
  ☐ Residual analysis (when to transform X x Y, Heteroscedasticity)
  ☐ Operations regarding CLT
  ☐ Sampling methods
- ☐ Common tests( ANOVA, chi-squared, t-test )
+ ☐ Common tests( ANOVA, chi-squared, t-test, sign test, Kolmogorov-Smirnov )
  ☐ Purpose of common distributions
+ ☐ Zipf’s law, Pareto distribution, power laws
+ ☐ Types of biases
 
 ML:
  ☐ Curse of dimensionality (layman explanation)
- ☐ Hamming distance
+ ☐ Distance metrics( Hamming distance, ... ) 
  ☐ Kernel trick
  ☐ BIC and AIC
  ☐ Model based clustering
+ ☐ Bayes error
+ ☐ Accuracy paradox
 
 Math:
  ☐ Proability operations
