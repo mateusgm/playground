@@ -1,26 +1,41 @@
 
 Stats:
- ☐ 
+ ✔ Sampling methods @done (17-06-04 23:38)
+ ✔ Purpose of common distributions @done (17-06-04 13:07)
+ ✔ Types of biases @done (17-06-04 13:07)
  ☐ Residual analysis (when to transform X x Y, Heteroscedasticity)
- ☐ Operations regarding CLT
- ☐ Sampling methods
- ☐ Common tests( ANOVA, chi-squared, t-test, sign test, Kolmogorov-Smirnov )
- ☐ Purpose of common distributions
+ ☐ Anova
+ ☐ Distribution operations (sum, confidence interval building ...)
+ ☐ Common tests( chi-squared, t-test, sign test, Kolmogorov-Smirnov )
  ☐ Zipf’s law, Pareto distribution, power laws
- ☐ Types of biases
+ ☐ Mixtures
+ ☐ Observational studies / propensity score matching
 
 ML:
- ☐ Curse of dimensionality (layman explanation)
- ☐ Distance metrics( Hamming distance, ... ) 
+ ✔ Curse of dimensionality (layman explanation) @done (17-06-04 13:07)
+ ✔ Accuracy paradox @done (17-06-04 23:40)
+ ✔ Model based clustering @done (17-06-04 23:40)
+ ☐ Distance metrics( Hamming distance, Mahalanobis, ... ) 
  ☐ Kernel trick
- ☐ BIC and AIC
- ☐ Model based clustering
+ ☐ BIC, AIC, Mutual information
  ☐ Bayes error
- ☐ Accuracy paradox
+ ☐ Calibration methods
 
 Math:
  ☐ Proability operations
  ☐ Detecting convexity
  ☐ Non-differentiable functions
  ☐ Basic algebra (cross product)
+
+Calendar:
+  ☐ 2
+  ☐ 1
+  ☐ 1
+  ☐ 1
+  ☐ 1
+  ☐ 2
+  ☐ 2
+  ☐ _
+  ☐ _
+  ☐ _
 

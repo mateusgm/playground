@@ -1,4 +1,5 @@
-## Puzzles
+Puzzles
+-------
 
 The mean heights of men and women in a population were calculated to be image00 and image01. What is the mean height of the total population?
 
@@ -64,5 +65,24 @@ There’s one box - has 12 black and 12 red cards, 2nd box has 24 black and 24 r
 
 You are about to send one million email (marketing campaign). How do you optimize delivery and its response? Can both of these be done separately?
 
+
+
+How would you perform clustering in one million unique keywords, assuming you have 10 million data points and each one consists of two keywords and a metric measuring how similar these two keywords are? 
+
+
+
+Do you know about the Netflix Prize problem? How would you approach it?
+
+
+
+How to do customer recommendation?
+
+
+
+How would you generate related searches for a search engine?
+
+
+
+How would you suggest followers on Twitter?
 
 

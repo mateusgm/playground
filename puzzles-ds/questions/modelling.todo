@@ -1,32 +1,6 @@
-Modeling
-========
 
-## Data exploration
-
-How do you summarize the distribution of your data?
-
-
-
-How do you handle outliers or data points that skew data?
-
-
-
-What assumptions can you make? Why and when? (i.e When is it safe to assume "normal")
-
-
-How to efficiently represent 5 dimension in a chart or in a video?
-
-
-
-How would you handle an imbalanced dataset?
-
-
-
-How do you handle missing or corrupted data in a dataset?
-
-
-
-## Feature selection
+Feature selection
+-------
 
 How do you select features?
 
@@ -48,15 +22,43 @@ Can a feature that doesnt help alone, be useful when another feature is added?
 
 
 
+Regularization
+-------
 
-## Regularization
+What is Regularization?:
 
-What is Regularization?
+  Regularization is a way of penalizing big coefficients on linear models, to prevent overfitting.
+
+  Most of the models follow this equation: B -> min(loss(X,Y|B) + penalty(B))
+
+  - Ridge:
+  y||B||^2
+  A type of shrinkage regularization (it shrinks the coefficients instead of zeroing them)
+  Differentiable (friendly to numerical optimization)
+  Assumption: Gaussian prior of coefficients
+  Stable 
+
+  - Lasso
+  y||B||
+  Promotes feature selection (correlated coefficients will zero)
+  Assumption: Laplace prior of coefficients
+  Unstable ( 0_4 has the same loss as 2_2 )
+
+  - Elastic Net
+  Weighted lasso and ridge
+  y1||B||  + y2||B||^2
+
+  - Dropout
+  Randomly deactivates neuros on a neural network
+  * preventing multiple neurons learning the same thing
+  * forcing the neural networl to learn the signal
 
 
 
-Which problem does Regularization tries to solve?
+Which problem does Regularization tries to solve?:
 
+  Overfitting (complex explanations of the world)
+  Final goal: better generalization to unseen data
 
 
 What is the difference in the outcome (coefficients) between the L1 and L2 norms? (usually I ask them to draw the geometric shape of the functions, just to make sure)
@@ -73,7 +75,60 @@ Let us go through the derivation of OLS or Logistic Regression. What happens whe
 
 
 
-## Fitting
+Evaluation
+-------
+
+How do you evaluate a model?
+
+
+
+What’s the trade-off between bias and variance?
+
+
+
+How do you estimate performance on unseen data?
+
+
+
+You have built several different models. How would you select the best one?
+
+
+
+What is sensitivity analysis? Is it better to have low sensitivity and low predictive power?
+
+
+
+How do you perform good cross-validation? What are the options?
+
+
+
+How would you convinvce someone else that this method is not overfitting?
+
+
+
+What is the difference between holding out a validation set and doing 10-Fold CV?
+
+
+
+What do you think about the idea of injecting noise in your data set to test the sensitivity of your models?
+
+
+
+Which is better: Too many false positives or too many false negatives?
+
+
+
+How do you ensure you’re not overfitting with a model?
+
+
+
+Explain what resampling methods are and why they are useful. Also explain their limitations.
+
+
+
+
+Fitting
+-------
 
 What is the Gradient Descent Method (the intuition is mostly enough)?
 
@@ -110,4 +165,29 @@ How do you tune hyperparameters? Any method beyond grid search?
 How Monte Carlo can be used for fitting?
 
 
+
+
+Data exploration
+-------
+
+How do you summarize the distribution of your data?
+
+
+
+How do you handle outliers or data points that skew data?
+
+
+
+What assumptions can you make? Why and when? (i.e When is it safe to assume "normal")
+
+
+How to efficiently represent 5 dimension in a chart or in a video?
+
+
+
+How would you handle an imbalanced dataset?
+
+
+
+How do you handle missing or corrupted data in a dataset?
 

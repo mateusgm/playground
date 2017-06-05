@@ -1,0 +1,110 @@
+Regression
+==========
+
+What are the principal choices involved?:
+
+  - Assumptions
+  0. Linear relationship 
+  1. Normality of residuals ()
+  2. Independence of residuals ()
+  4. Homoscedasticity of residuals (against predictions and variables)
+  5. Independent predictors
+
+  - How to test them:
+  ?
+
+  - What to do if not true:
+  ?
+
+
+What is linear about linear regression?:
+
+  The relationship between response and the expected value of predictors.
+  * E[y|x] = b + Ax
+
+  - GLM:
+  Given a distribution of y
+  link( E[y|x] ) = b + Ax 
+  So that max( L(b) ) = max( P(X,b|y)  )
+
+Interpretation of coefficients:
+
+  A increase in one unit of x, holding others constant, lead to increase of b units in Y
+
+  - Factor strength:
+  Centered and unit deviation scaled
+  Correlated variables coefficients might fight for coefficients
+  ?
+
+
+How to model non-linearity?:
+
+  Called as base-expansions.
+  Although model is linear, one can pre-apply any transformation to the dataset before feeding it to the model.
+
+  - Some common:
+  x1*x2
+  x1^2
+  bin(x1)
+
+What is Ordinary Least Squares Regression? How it can be learned?:
+
+
+What if the design matrix is not full rank?:
+
+
+Other algorithms for regression. When to use?:
+
+
+Why do we need/want the bias term?:
+
+  It allow modeling
+
+
+Inference
+------
+
+How to residual analysis? How to correct for anything you find?:
+
+
+What is collinearity and what to do with it?:
+
+  One or more predictors can be expressed as a linear combination of other preditors.
+  Theresponse is already explained by other variables, making the model instable.
+
+  - How to detect?
+  Variance of parameters with changes on the data
+  Add one predictor at a time
+
+  - How to treat
+  1. Extract latent variables ( PCA, representation learning )
+  2. Regularization ( ridge )
+  3. Remove predictors
+  4. Get more data
+
+
+How does the variance of the error term change with the number of predictors, in OLS?:
+
+
+
+In linear regression, under what condition R^2 always equals a perfect 1?:
+
+
+
+You fit a multiple regression to examine the effect of a particular feature. The feature comes back insignificant, but you believe it is significant. Why can it happen?:
+
+  1. Colinearity
+  2. Non-linear relationship
+
+
+Your model considers the feature XX significant, and ZZ is not, but you expected the opposite result. Why can it happen?:
+
+
+
+How to check is the regression model fits the data well?:
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+
+
+GLM
+-------
+
+Why do we call it GLM when it's clearly non-linear? (somewhat tricky question, to be asked somewhat humorously---but extremely revealing.):
+
+
+
+How you can fit non-linear relations between X (say, Age) and Y (say, Income) into a Linear Model? - I also expect candidates to show me mathematically the marginal effect of X on Y based on their proposed solution.:
+
+
+
+Agglomerative Clustering
+-------
+
+What are the possible types of linkage functions?
+
+
+How the algorithm works?
+
+
+
+SVM
+-------
+
+What is the maximal margin classifier? How this margin can be achieved and why is it beneficial?
+
+
+
+How do we train SVM? What about hard SVM and soft SVM?
+
+
+
+What is a kernel? Explain the Kernel trick
+
+
+
+Which kernels do you know? How to choose a kernel?
+
+
+
+
+Neural Networks
+-------
+
+What is an Artificial Neural Network?
+
+
+
+How to train an ANN? What is back propagation?
+
+
+
+How does a neural network with three layers (one input layer, one inner layer and one output layer) compare to a logistic regression?
+
+
+
+What is deep learning? What is CNN (Convolution Neural Network) or RNN (Recurrent Neural Network)?
+
+
+
+Time Series
+-------
+
+p,d,q parameters and how you choose them
+
+
+
+unit root and box test
+
+
+
+if you have a data-set with 100 observations for each Xi, and 3 lag-effect variables of X1, how many predictions will you have if you will run any simple linear regression?

@@ -118,8 +118,6 @@ Statistics
 
 11. Explain likely differences between administrative datasets and datasets gathered from experimental studies. What are likely problems encountered with administrative data? How do experimental methods help alleviate these problems? What problem do they bring?:
 
-    Bias is a systematic error introduced in the analysis or dataset.
-
     Administrative datasets=observational
     Experimental studies=randomized trial (hopefully)
 
@@ -202,13 +200,18 @@ Statistics
 
 19. Give an example where the median is a better measure than the mean:
 
+    Both: measures central tendency.
+
     - When is bad:
     Exponential distribution (book window)
     Heavy tail skewed distributions (salary)
     Bimodal distributions (frequency of gym)
 
     - When is good:
-    ?
+    Median is sensitive to sample size (small samples it will jump a ot)
+    Linear optimization (mean is the center of OLS )
+    Normal data (more efficient )
+    Resistant to shift changes
 
 
 20. Given two fair dices, what is the probability of getting scores that sum to 4? to 8?:
@@ -236,6 +239,8 @@ Statistics
 
 23. When you sample, what bias are you inflicting?:
 
+    Bias is a systematic error introduced in the analysis or dataset.
+
     - Type of biases:
     Sampling bias: subjects being more or less likely to be included than others
     Selection bias: randomization was not achieved (not representative of population) (same as sampling bias)
@@ -257,6 +262,8 @@ Statistics
     Choose a representative sample, preferably by a random method
     Choose an adequate size of sample
     Identify all confounding factors/biases if possible (rank of item for example)
+
+    "If entire segments of the population are excluded from a sample, then there are no adjustments that can produce estimates that are representative of the entire population. But if some groups are underrepresented and the degree of underrepresentation can be quantified, then sample weights can correct the bias"
 
     - How do you control modeling time?
     Added confounding factors as independent variables

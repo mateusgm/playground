@@ -285,14 +285,14 @@
 
 17. How do you know if one algorithm is better than other?:
 
-    Pre-analysis
+    - Pre-analysis
     1. Application (random forest x neural nets for image recognition x fraud detection)
     2. Scalability (what is the size of the problem?)
     3. Out of core learning (can the algorithm keep on learning?)
     4. Dataset (missing values? inbalanced? linear relationships?) 
     5. Bias x variance (sensitivity to changes on the underlying distribution)
     
-    Given a problem and a dataset
+    - Given a problem and a dataset
     1. Crossvalidation with a common metric
     2. Analysis of prediction distribution (most metrics are averages)
     3. Prefer the one with smaller complexity (occam razor)
@@ -301,18 +301,18 @@
 
 18. How do you test whether a new credit risk scoring model works?:
 
-    What i'd expect: the higher the score, the higher the default rate
+    - What i'd expect: the higher the score, the higher the default rate
     Problem: we have data only on people that previous algorithm didnt consider superbad
     What we're trying to maximize: profit.
         E(profit|model) = -p(default|model)*credit + p(~default|model)*profit. Where P(default) = FNR and P(~default) = TNR
     Decision: While discovering more true positives is good, the cost of a false negative (not detecting a bad application) is higher than the cost of a false positive (rejecting a good application), so we might tend towards recall.
 
-    Offline analysis >
+    - Offline analysis >
     1. Run in a dataset not used for training and get offline metric (cross entropy)
     2. Calibration curve ( probability x % of predicted )
     3. PR curve (decide the threshold)
 
-    Online analysis: (as our data have selection bias, we cant measure the true impact)
+    - Online analysis: (as our data have selection bias, we cant measure the true impact)
     1. For a period: AB test on new customers accepting only customer < threshold
     2. Track default rate (FNR), credit lost (the distribution might be different) and profit 
     3. Hypothesis testing: whats the proassuming there is no difference.
@@ -357,10 +357,10 @@
     - Strong assumption: feature independence given labels.
     P ( y | x) = P ( x | y) = PR( P (x_i|y) ) * P(y)
                  P ( x )      P(x)
-
     - Pseudocode:
     Count( label )
-    Count( feature_value | label)
+    Categorical: Count( feature_value & label) / Count( label )
+    Numerical: ll( value, mean(feature|label), std(feature|label) ) -> assumption of distribution
 
     - Laplace smoothing: (when rare features n -> 0 )
     n + k
@@ -372,33 +372,65 @@
 
 22. What are the drawbacks of linear model? Are you familiar with alternatives (Lasso, ridge regression, boosted trees)?:
 
+    - Strong Assumptions:
+    ?
+
+    - Benefits
+    Resistent to changes on the data
+    Simple to compute
+    Can be solved with out of core methods
+
+    - Drawbacks
+    Only linear relationships (although can be tweaked with interactions and base expansions)
+    ?
 
 
 23. Do you think 50 small decision trees are better than a large one? Why?:
 
+    Depends on the problem and how do you fit them.
+    Do you need to lower the bias or the variance?
+    How the trees are different from each other?
+
+    - Larger tree
+    Sparcity on the nodes -> less balanced predictions
+    Tend to overfit -> it will adapt to training data (possible learning the noise?)
+    Small changes on dataset change the model
+
+    - Multiple different trees
+    More robust (less variable) solution as its averaging between multiple models
+    Smaller change to capture the noise, as the trees are smaller and prediction is made by majority
+    More expensive to compute and less interpretable
+
 
 24. Why is mean square error a bad measure of model performance? What would you suggest instead?:
 
+    ?
 
-25.How can you prove that one improvement you’ve brought to an algorithm is really an improvement over not doing anything? Are you familiar with A/B testing?
+25.How can you prove that one improvement you’ve brought to an algorithm is really an improvement over not doing anything? Are you familiar with A/B testing?:
 
-
-26. What do you think about the idea of injecting noise in your data set to test the sensitivity of your models?
-
-
-27. Do you know / used data reduction techniques other than PCA? What do you think of step-wise regression? What kind of step-wise techniques are you familiar with?
-
-
-28. How would you define and measure the predictive power of a metric?
+    - Offline:
+    Classifiers: improvement over base rate (predicting the predominat class)
+    Regression: improvement over predicting the mean
+    Ranking: improvement over most popular
 
 
-29. Do we always need the intercept term in a regression model?
+
+26. What do you think about the idea of injecting noise in your data set to test the sensitivity of your models?:
 
 
-30. What are the assumptions required for linear regression? What if some of these assumptions are violated?
+27. Do you know / used data reduction techniques other than PCA? What do you think of step-wise regression? What kind of step-wise techniques are you familiar with?:
 
 
-31. What is collinearity and what to do with it? How to remove multicollinearity?
+28. How would you define and measure the predictive power of a metric?:
+
+
+29. Do we always need the intercept term in a regression model?:
+
+
+30. What are the assumptions required for linear regression? What if some of these assumptions are violated?:
+
+
+31. What is collinearity and what to do with it? How to remove multicollinearity?:
 
 
 32. How to check if the regression model fits the data well?
