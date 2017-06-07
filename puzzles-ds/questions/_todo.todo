@@ -20,6 +20,7 @@ ML:
  ☐ BIC, AIC, Mutual information
  ☐ Bayes error
  ☐ Calibration methods
+ ☐ Likelihood
 
 Math:
  ☐ Proability operations
@@ -28,14 +29,25 @@ Math:
  ☐ Basic algebra (cross product)
 
 Calendar:
-  ☐ 2
-  ☐ 1
-  ☐ 1
-  ☐ 1
-  ☐ 1
-  ☐ 2
-  ☐ 2
+  - Toy problem + chapter + questions
+  ☐ Mon: Logistic
+  ☐ Tue: Kmeans
+  ☐ Wed: Dimensionality
+  ☐ Thu: Trees
+  ☐ Fri: Recs + Nlp
+  ☐ Sat: Others
+  ☐ Sun: Modelling + Fitting
+  ☐ Mon: review
+  ☐ Tue: review
+  ☐ Wed: review
   ☐ _
-  ☐ _
-  ☐ _
+
+Doubts:
+  ☐ How in depth should know alternative methods? (agglomerative clustering, ...)
+  ☐ How in depth should know optimizations? (tree split, gradient descent variations, ...)
+  ☐ How in depth should know NLP? (lda)
+  ☐ How in depth should know statisticals tests? ()
+  ☐ Dimensionality reduction - PCA is enough or should i know in-depth auto encoders, matrix factorization, ...
+
+
 

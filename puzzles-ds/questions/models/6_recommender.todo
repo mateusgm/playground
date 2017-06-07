@@ -1,5 +1,102 @@
+===========================
 
-content x user
-distance functions
-implicit feedback
-cold start
+Overview
+------
+
+Explain how it works in a few words:
+
+
+
+Whats the metric the model tries to optimize?:
+
+  MSE[users] ( rating - predict(rating|users,items) )
+
+  - How do we find similar items?
+  Correlation
+  Euclidean distance
+  ...
+
+Algorithm / Fitting
+-------
+
+Which method do you use to fit your model?:
+
+  - Matrix factorization
+  Nonetheless, neighborhood models, which have been dominating most of the collaborative filtering literature, are still expected to be popular due to their practical characteristics - being able to handle new users/ratings without re-training and offering direct explanations to the recommendations.
+
+What's the complexity?:
+
+
+
+Pseudo-code (with formulas):
+
+
+
+How do you need to prepare the data for the model? (categorical? missing? outliers? scale? variance?):
+
+  implicit feedback
+  cold start
+
+
+Does the model have convergence problems? Does it have a random component or will the same training data always generate the same model? How do we deal with random effects in training?:
+
+
+
+Explain how {core feature} is done:
+
+  - Normalization of global effects / user bias
+  Baseline trends (average accross all )
+  User specific trends ( rates lower than others )
+  Item specific trends ( overrated in relation to others )
+  Time trends (old movies tend to get better reviews, the more you review the more critic you become)
+  Interactions
+
+
+How many parameters the model has to learn? is is feasible setup?:
+
+
+
+Evaluation
+-------
+
+How you evaluate quality/performance of your model? Why not metric ______?:
+
+
+
+How interpretable is the model?:
+
+
+
+Does the model have any meta-parameters and thus require tuning? What are they? How would you choose the best one?:
+
+
+
+Are the predictions calibrated? If not how should they be calibrated?:
+
+
+  - Neighborhood models
+  Neighbors are independent
+  Different items should use same neighborhood size
+  * instead of using correlation as weight on the sum, let the model learn the weights (linear regression)
+
+
+
+Is it prone to over-fitting? How do you detect? What can be done about this?:
+
+
+
+
+Model selection
+-------
+
+Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
+
+  Implicit x explicit
+
+What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
+
+
+
+Can it learn non-linearities? If so, how so? If not, is there any way around it?:
+
+

@@ -1,3 +1,5 @@
+===========================
+
 Overview
 ------
 
@@ -9,28 +11,34 @@ Whats the metric the model tries to optimize?:
 
 
 
-
-Model selection
+Algorithm / Fitting
 -------
 
-Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
+Which method do you use to fit your model?:
 
 
 
-What types of data (numerical, categorical etc…) can the model handle?:
+What's the complexity?:
 
 
 
-Can the model handle missing data? And correlated predictors? And sparsity?:
+Pseudo-code (with formulas):
 
 
 
-What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
+How do you need to prepare the data for the model? (categorical? missing? outliers? scale? variance?):
 
 
 
-Can it learn non-linearities? If so, how so? If not, is there any way around it?:
+Does the model have convergence problems? Does it have a random component or will the same training data always generate the same model? How do we deal with random effects in training?:
 
+
+
+Explain how {core feature} is done:
+
+
+
+How many parameters the model has to learn? is is feasible setup?:
 
 
 
@@ -58,33 +66,18 @@ Is it prone to over-fitting? How do you detect? What can be done about this?:
 
 
 
-Algorithm / Fitting
+Model selection
 -------
 
-Which method do you use to fit your model?:
+Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
 
 
 
-What's the complexity?:
+
+What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
 
 
 
-Pseudo-code (with formulas):
-
-
-
-Can we update the model without retraining it from the beginning?:
-
-
-
-Does the model have convergence problems? Does it have a random component or will the same training data always generate the same model? How do we deal with random effects in training?:
-
-
-
-Explain how {core feature} is done:
-
-
-
-How many parameters the model has to learn? is is feasible setup?:
+Can it learn non-linearities? If so, how so? If not, is there any way around it?:
 
 

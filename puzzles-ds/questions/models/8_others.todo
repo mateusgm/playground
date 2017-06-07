@@ -5,20 +5,75 @@ GLM
 
 Why do we call it GLM when it's clearly non-linear? (somewhat tricky question, to be asked somewhat humorously---but extremely revealing.):
 
+  link( E[y|x] ) = b + Ax 
+
 
 
 How you can fit non-linear relations between X (say, Age) and Y (say, Income) into a Linear Model? - I also expect candidates to show me mathematically the marginal effect of X on Y based on their proposed solution.:
+
+
+Why do we need/want the bias term?:
+
+  It allow modeling things that doesnt have mean zero.
+  Bias term is the offset from zero.
+
+
+Random Forest
+------
+
+How a tree is grown
+
+
+
+Purpose of growing a forrest
+
+
+
+Purpose of selecting a subset of variables at each split
+
+
+
+How pruning works
+
+
+
+How variable importance works
+
+
+On what type of ensemble technique is a random forest based? What particular limitation does it try to address?
+
+
+
+Other ways to combine trees? What about boosting?
+
+
 
 
 
 Agglomerative Clustering
 -------
 
-What are the possible types of linkage functions?
+What are the possible types of linkage functions?:
+
+  - Simple linkage
+
+  - Complete linkage
+
+  - Average linkage
 
 
-How the algorithm works?
+How the algorithm works?:
 
+  Begin with all observations as separate clusters and agglomerate them until you have only 1 cluster.
+
+  clusters = x
+  while(len(clusters) != 1)
+    for i in clusters
+      for j in clusters
+        d_i_j = distance( cluster[i], cluster[j] )
+        if d_i_j < min_distance: min_distance = d_i_j
+      merge(clusters[i], clusters[j])
+      delete(clusters[j])
 
 
 SVM

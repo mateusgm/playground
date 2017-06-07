@@ -1,5 +1,140 @@
+K-means
+------
 
-How can you modify KK-Means to produce soft class assignments?:
+How can you modify K-Means to produce soft class assignments?:
+
+  EM with mixtures of Gaussians with variance 1
 
 
 What distance metrics can be used? Does the algorithm needs any tweaks?:
+
+  Any distance, including a distance composed of weighted sum of distance between its dimensions.
+
+  - For each type:
+  Continuous: Euclidean / Cosine similarity 
+  Cardinal: divide by max and treat as continuous
+  Categorical: ?
+
+  - We'd needs to update logic to defined cluster location
+  mean is appropriate only for Euclidean distance.
+  Calculate the item with least squared distance to all others cluster items
+
+
+===========================
+
+
+Overview
+------
+
+Explain how it works in a few words:
+
+  Begin with random clusters, iterate assigning observations to the nearest cluster and updating the center of the clusters, until no change is made.
+
+
+Whats the metric the model tries to optimize?:
+
+  Within sum of squares distance = sum[cluster]( sum[item, item] d(i,j)^2 )
+
+
+Algorithm / Fitting
+-------
+
+Which method do you use to fit your model?:
+
+  - Lloyd's
+  clusters <- random
+  while change in clusters
+    for x in N
+      for c in clusters
+        if distance(x, c) <  add_cluster(i,c)
+    c = new_center(c)
+
+What's the complexity?:
+
+  ?
+
+Can we update the model without retraining it from the beginning?:
+
+  No
+
+
+Does the model have convergence problems? Does it have a random component or will the same training data always generate the same model? How do we deal with random effects in training?:
+
+  Yes, it's bound to local optima.
+
+  - Ways to go around it
+  Random initialization and run multiple times
+  Use improvements (kmeans++ for initial clustering initialization)
+
+Explain how {core feature} is done:
+
+  Distance?
+
+How many parameters the model has to learn? is is feasible setup?:
+
+  Cluster centers: k * p
+
+
+Evaluation
+-------
+
+How you evaluate quality/performance of your model? Why not metric ______?:
+
+  - Within SSE:
+  - Between SSE:
+  - Total SSE:
+
+
+How interpretable is the model?:
+
+  Highly
+
+
+Does the model have any meta-parameters and thus require tuning? What are they? How would you choose the best one?:
+
+  k: number of clusters
+
+  - Trick
+  We cant minimize the error accross models, as the hyperparameter that we have is tied to the error of the model
+  We cant do cross validation (?)
+
+  - Depends on the application
+  Prior knowledge
+  Dumping into a supervised? The supervised should be a good proxy
+  Bayesian information
+  Silhouette
+  Elbow method (compared against uniform distribution?)
+
+Is it prone to over-fitting? How do you detect? What can be done about this?:
+
+  ?
+
+
+Model selection
+-------
+
+Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
+
+  - Yes
+  We have k clusters
+  The clusters have same variance ( shape + number of items + scale matters )
+
+
+What types of data can the model handle? Can the model handle missing data?:
+
+  In its tradidional form, numerical.
+  But we can do transformations and use appropriate distances for every data type (see question above)
+
+  Another approach is to bin every numeric feature and change to K-Medoids (use model instead of mean to calculate center and distance)
+
+What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
+
+  Agglomerative, DBSCAN
+  ?
+
+Can it learn non-linearities? If so, how so? If not, is there any way around it?:
+
+  By non-linearities: structures that are not even shaped-sized
+  Yes, by transforming the input. For example, polar coordinates with we know our data is radius based.
+  But how would we know this?
+

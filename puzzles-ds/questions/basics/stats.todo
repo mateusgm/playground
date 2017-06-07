@@ -20,7 +20,6 @@ How to interpret:
 
 
 
-
 What is tt-Test/FF-Test/ANOVA? When to use it?:
 
 
@@ -61,6 +60,14 @@ Explaing power transforms:
 What is Box-Cox transformation? :
 
 
+When to do transformations?:
+
+  First, transform the Y variable to achieve homoscedasticity (constant variance). Then, transform the X variable to achieve linearity.
+  
+  to achieve linearity.
+  to achieve homogeneity of variance, that is, constant variance about the regression equation.
+  to achieve normality or, at least, symmetry about the regression equation.
+  A transformation that achieves one of these goals often ends up achieving all three. This sometimes happens because when data have a multivariate normal distribution, the linearity of the regression and homogeneity follow automatically.
 
 How would you turn unstructured data into structured data?:
 
@@ -100,9 +107,82 @@ Why is randomization important in experimental design?:
 How can you prove that one improvement you’ve brought to an algorithm is really an improvement over not doing anything? How familiar are you with A/B testing?:
 
 
+How do you decide which test to use?:
 
 
 How to identify a cause Vs a correlation? Give examples.:
+
+
+Sampling
+------
+
+Why and when?:
+
+
+
+How do you calculate needed sample size?:
+
+
+
+Limitations:
+
+
+
+Some 3rd party organization randomly assigned people to control and experiment groups. How can you verify that the assignment truly was random?:
+
+
+
+When you sample, what bias are you inflicting?:
+
+  Selection bias (not random)
+  Survivor (picking only the ones that passed your process)
+  Under coverage (too small for the targetted measurement)
+
+How do you control for biases?:
+
+
+
+Methods for sampling?:
+
+  - Types (simple x clustered x stratified x ...)
+  ?
+
+  - Mode (with x without replacement)
+  ?
+
+
+Explain what resampling methods are. Why they are useful. What are their limitations?
+
+
+
+
+Bootstrapping - how and why it is used?
+
+
+
+
+How to use resampling for hypothesis testing? Have you heard of Permutation Tests?
+
+
+
+
+How would you apply resampling to time series data?
+
+
+
+
+## Estimation
+
+What's the Central Limit Theorem?
+
+
+
+How to estimate mean of population from a sample?
+
+
+
+What about deviation?
+
 
 
 

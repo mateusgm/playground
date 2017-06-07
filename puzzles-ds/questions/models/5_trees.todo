@@ -1,65 +1,83 @@
-## Decision trees
+===========================
 
-How is a decision tree pruned?
+Overview
+------
 
-
-
-What is a decision tree?
-
-
-
-What are some business reasons you might want to use a decision tree model?
+Explain how it works in a few words:
 
 
 
-How do you build it? What impurity measures do you know?
+Whats the metric the model tries to optimize?:
 
 
 
-Describe some of the different splitting rules used by different decision tree algorithms.
+Algorithm / Fitting
+-------
+
+Which method do you use to fit your model?:
 
 
 
-Is a big brushy tree always good? Why would you want to prune it?
+What's the complexity?:
 
 
 
-Is it a good idea to combine multiple trees?
+Pseudo-code (with formulas):
 
 
 
-What is Random Forest? Why is it good?
+How do you need to prepare the data for the model? (categorical? missing? outliers? scale? variance?):
 
 
 
-Other ways to combine trees? What about boosting?
+Does the model have convergence problems? Does it have a random component or will the same training data always generate the same model? How do we deal with random effects in training?:
+
+
+
+Explain how {core feature} is done:
+
+
+
+How many parameters the model has to learn? is is feasible setup?:
+
+
+
+Evaluation
+-------
+
+How you evaluate quality/performance of your model? Why not metric ______?:
+
+
+
+How interpretable is the model?:
+
+
+
+Does the model have any meta-parameters and thus require tuning? What are they? How would you choose the best one?:
+
+
+
+Are the predictions calibrated? If not how should they be calibrated?:
+
+
+
+Is it prone to over-fitting? How do you detect? What can be done about this?:
 
 
 
 
-## Random Forest
+Model selection
+-------
 
-How a tree is grown
-
-
-
-Purpose of growing a forrest
+Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
 
 
 
-Purpose of selecting a subset of variables at each split
+
+What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
 
 
 
-How pruning works
+Can it learn non-linearities? If so, how so? If not, is there any way around it?:
 
 
-
-How variable importance works
-
-
-
-Knowing gbm here is also a plus
-
-
-On what type of ensemble technique is a random forest based? What particular limitation does it try to address?

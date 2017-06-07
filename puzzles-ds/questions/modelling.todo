@@ -2,9 +2,12 @@
 Feature selection
 -------
 
-How do you select features?
+How do you select features?:
 
-
+  Hypothesis
+  Mutual information: ?
+  Stepwise selection
+  Lasso
 
 What are some good ways for performing feature selection that do not involve exhaustive search?
 
@@ -34,7 +37,7 @@ What is Regularization?:
   - Ridge:
   y||B||^2
   A type of shrinkage regularization (it shrinks the coefficients instead of zeroing them)
-  Differentiable (friendly to numerical optimization)
+  Differentiable (friendly to gradient-based methods)
   Assumption: Gaussian prior of coefficients
   Stable 
 
@@ -52,6 +55,7 @@ What is Regularization?:
   Randomly deactivates neuros on a neural network
   * preventing multiple neurons learning the same thing
   * forcing the neural networl to learn the signal
+  ?
 
 
 
@@ -61,16 +65,17 @@ Which problem does Regularization tries to solve?:
   Final goal: better generalization to unseen data
 
 
-What is the difference in the outcome (coefficients) between the L1 and L2 norms? (usually I ask them to draw the geometric shape of the functions, just to make sure)
-
-
-
-Why (geometrically) does LASSO produce solutions with zero-valued coefficients (as opposed to ridge)?
+What is the difference in the outcome (coefficients) between the L1 and L2 norms? (usually I ask them to draw the geometric shape of the functions, just to make sure):
 
 
 
 
-Let us go through the derivation of OLS or Logistic Regression. What happens when we add L2L2 regularization? How do the derivations change? What if we replace L2L2 regularization with L1L1 regularization?
+Why (geometrically) does LASSO produce solutions with zero-valued coefficients (as opposed to ridge)?:
+
+
+
+
+Let us go through the derivation of OLS or Logistic Regression. What happens when we add L2L2 regularization? How do the derivations change? What if we replace L2L2 regularization with L1L1 regularization?:
 
 
 
@@ -130,39 +135,77 @@ Explain what resampling methods are and why they are useful. Also explain their 
 Fitting
 -------
 
-What is the Gradient Descent Method (the intuition is mostly enough)?
+What is the Gradient Descent Method (the intuition is mostly enough)?:
+
+  - Batch
+  Update B to the rate of its steepest direction. 
+  for i in epochs
+    B = B - a * gradient_B( loss(X,y,B)) 
+
+  - Stochastic
+  Estimate B applying the gradient successfully for each instance.
+  for i in epochs
+    data = shuffle(data)
+    for x,y in data
+      B = B - a * gradient_B( loss(x,y,B)) 
+
+Does the Gradient Descent method always converge to the same point?:
+
+  Batched: yes
+  Stochastic: on one epoch yes, normally we shuffle before second, which would mean a different convergence path.
+
+Is it necessary that the Gradient Descent Method will always find the global minima?:
+
+  No, depends on learning rate and convexity of loss function.
+
+  Learning rate: it can oscilate around minima or diverge on big learning rates
+  Non-convex: can be stuck on local minima or saddle points
+
+Common optimizations Gradient Descent?:
+
+  - In general:
+  Adaptive learning rate
+  Batch x min-batch x stochastic
+  Batch normalization (renormalizes coefficients during training)
+  Early stopping
+
+  - Blah
+  Momentum (add fraction of last update to the current)
+  Adagrad (adapts learning rate to parameters )
+  Adadelta( modification to adagrad to prevent monotically decreasing learning rate)
+  Adam ( adapts learning rate and momentum to parameters )
+
+  - For non convexity
+  "As has been shown, SGD usually achieves to find a minimum, but it might take significantly longer than with some of the optimizers, is much more reliant on a robust initialization and annealing schedule, and may get stuck in saddle points rather than local minima"
+
+What are alternatives to gradient descent? Pros and cons?:
+
+  Newton method
+  BFGS
+  L-BFGS
+  IRLSM
+
+How maximum likelihood works?:
 
 
 
-Does the Gradient Descent method always converge to the same point?
+Whats the difference between convex vs nonconvex?:
 
 
 
-Is it necessary that the Gradient Descent Method will always find the global minima?
+Is it always bad to have local optima?:
 
 
 
-How maximum likelihood works?
+Whats EM?:
 
 
 
-Whats the difference between convex vs nonconvex?
+How do you tune hyperparameters? Any method beyond grid search?:
 
 
 
-Is it always bad to have local optima?
-
-
-
-Whats EM?
-
-
-
-How do you tune hyperparameters? Any method beyond grid search?
-
-
-
-How Monte Carlo can be used for fitting?
+How Monte Carlo can be used for fitting?:
 
 
 

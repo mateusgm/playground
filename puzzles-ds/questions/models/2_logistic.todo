@@ -1,16 +1,153 @@
-Logistic regression
--------------------
 
-Is metric x sensitive to imbalance?:
-
-
-
-What are the differences between RF, SVM, NB, NN and LR?:
-
-
+Other
+-------
 
 What’s the difference between a generative and discriminative model?:
 
-  Generative = P
+  - Generative learns the joint distribution P(X,Y)
+  ?
 
+  - Discriminative learns to discrimate only P(Y|X)
+  ?
+
+What's bayes error and why does it matter?:
+
+
+  
+
+
+===========================
+
+Overview
+------
+
+Explain how it works in a few words:
+
+  We try to estimate the probability of an event happening with a linear model.
+  In other words, by minimizing the likelihood of the outcome in relation to the linear combination of the data, 
+  we can tell how the odds of something happen will change in different scenarios..
+
+
+Whats the metric the model tries to optimize?:
+
+  Negative Log loss = -sum_y( log( p(y) ) )
+
+
+Algorithm / Fitting
+-------
+
+Which method do you use to fit your model?:
+
+  - Least squares
+  Assumption of least squares is normality of residuals.
+  This is not true for logistic, so cant be used.
+
+  - Maximum likelihood
+  ?
+
+
+Pseudo-code (with formulas):
+
+  logit(y) ~ linear(x)
+  log( y/1-y )  = A + bX
+  y = logistic(A + bX)
+  y = 1 / 1 + e^-y
+
+  glm() with logistic link
+  E[ y ] = g( A+bX) 
+  
+  B <- random
+  while converge
+    likelihood = p(x,y|theta) ~> 
+    B <- B - delta(likelihood)
+
+
+Can we update the model without retraining it from the beginning?:
+
+  Yes, if we fit it using Stochastic Gradient Descent.
+
+
+How many parameters the model has to learn? is is feasible setup?:
+
+  bias + B
+
+
+
+Evaluation
+-------
+
+How you evaluate quality/performance of your model? Why not metric ______?:
+
+  - Log loss
+
+  - Accuracy: misleading
+  It assumes equal cost for FP and FN
+  It doesnt tell us how we perform against base error (majority)
+
+  - AUC: probability that positive ranks higher than negative
+  TPR x FPR
+
+  * Why not
+  On class imbalance, its not sensitive to changes on dominant class
+  Doesnt discriminate between cost of errors
+  Average accross all thresholds (summarizes areas that you'd never go)
+  Insensitive to calibration (doesnt responds to changes in scale of mispredictions)
+
+  - Precision x recall
+
+
+How interpretable is the model?:
+
+
+
+Does the model have any meta-parameters and thus require tuning? What are they? How would you choose the best one?:
+
+  Only if regularized.
+
+
+Are the predictions calibrated? If not how should they be calibrated?:
+
+  Yes.
+  This can be test plotting predictions x % of positives.
+
+
+Is it prone to over-fitting? How do you detect? What can be done about this?:
+
+
+
+
+Model selection
+-------
+
+Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
+
+  The log odds can be explained with a linear model.
+  ?
+
+
+What types of data (numerical, categorical etc…) can the model handle? Can the model handle missing data?:
+
+  Numeric( continuous and discrete)
+  Categorical( through one hot encoding )
+  Cant handle missing data by itself, needs to rely on manual handling of the missing info.
+
+
+What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
+
+  - Decision Trees
+  
+  - Ensemble of trees (bagging, random forest, boosted trees)
+  
+  - SVM
+
+  - Naive Bayes
+
+  - ANN
+
+
+Can it learn non-linearities? If so, how so? If not, is there any way around it?:
+
+  In its traditional form, no.
+
+  We can overcome this with base transformations and interactions.
 

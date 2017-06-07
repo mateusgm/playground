@@ -1,70 +1,19 @@
-Regression
-==========
-
-What are the principal choices involved?:
-
-  - Assumptions
-  0. Linear relationship 
-  1. Normality of residuals ()
-  2. Independence of residuals ()
-  4. Homoscedasticity of residuals (against predictions and variables)
-  5. Independent predictors
-
-  - How to test them:
-  ?
-
-  - What to do if not true:
-  ?
 
 
-What is linear about linear regression?:
-
-  The relationship between response and the expected value of predictors.
-  * E[y|x] = b + Ax
-
-  - GLM:
-  Given a distribution of y
-  link( E[y|x] ) = b + Ax 
-  So that max( L(b) ) = max( P(X,b|y)  )
-
-Interpretation of coefficients:
-
-  A increase in one unit of x, holding others constant, lead to increase of b units in Y
-
-  - Factor strength:
-  Centered and unit deviation scaled
-  Correlated variables coefficients might fight for coefficients
-  ?
-
-
-How to model non-linearity?:
-
-  Called as base-expansions.
-  Although model is linear, one can pre-apply any transformation to the dataset before feeding it to the model.
-
-  - Some common:
-  x1*x2
-  x1^2
-  bin(x1)
-
-What is Ordinary Least Squares Regression? How it can be learned?:
-
-
-What if the design matrix is not full rank?:
-
-
-Other algorithms for regression. When to use?:
-
-
-Why do we need/want the bias term?:
-
-  It allow modeling
-
-
-Inference
+Other (inference)
 ------
 
 How to residual analysis? How to correct for anything you find?:
+
+  - Plot residuals x predicted.
+  Should be centered on the mean and random (variance not dependent nor scaling on y)
+  Transform y to treat variance, transform x to treat nonlinearities.
+
+  * Variance tied to Y
+  * Residual dependent on Y
+  
+  - Histogram of residuals
+  Useful for inference (if they're not normal p-values cant be trusted on small samples)
 
 
 What is collinearity and what to do with it?:
@@ -85,24 +34,145 @@ What is collinearity and what to do with it?:
 
 How does the variance of the error term change with the number of predictors, in OLS?:
 
-
+  The error should decrease or stay constant (more explanation power)
+  Under Gauss-Markov theorem, the variance can be estimate by
+    var(e) ~ e^2 / (n-k-1)
+  So we cant say
 
 In linear regression, under what condition R^2 always equals a perfect 1?:
 
-
+  
 
 You fit a multiple regression to examine the effect of a particular feature. The feature comes back insignificant, but you believe it is significant. Why can it happen?:
 
   1. Colinearity
   2. Non-linear relationship
+  3. Holding all other variables constant, this variable doesnt explain anything else
+  4. Small sample to detect the effect
+
+===========================
+
+Overview
+------
+
+Explain how it works in a few words:
+
+  Miniziming the sum of squares error, we try to learn coefficients for a linear equation that predicts the outcome.
+  In layman terms, controlling for different factors, can we predict outcome?
 
 
-Your model considers the feature XX significant, and ZZ is not, but you expected the opposite result. Why can it happen?:
+Whats the metric the model tries to optimize?:
+
+  MSE = sum( (y_i -f(x,b))^2 )
+
+
+Algorithm / Fitting
+-------
+
+Which method do you use to fit your model?:
+
+  - OLS
+  On certain conditions regarding the residuals (zero expectation, uncorrelated, and homoscedastic)
+  it's the best unbiased estimator (in terms of the smallest variance).
+
+  * Closed form
+  y = (X*X^t)^-1 . y*X^t
+  Needs to inverse the matrix, so unfeasible for large datasets
+  Instable if matrix is not full rank (predictors are colinear)
+  Also squared to cubix in complexity (depending on the matrix inversion solution)
+
+  * Numerical optimization
+  Using something like Gradient Descent
+  Convergence subject to a good learning rate
+  Fast and retrainable
+
+  - MLE
+  Under assumption of Normal residuals with zero expectation, is the same as optimizing for MSE.
+  Assuming normality of residuals, you can learn
+  L(theta|data) = p(data|theta) ~ N(mean, variance)
+
+
+Does the model have convergence problems? Does it have a random component or will the same training data always generate the same model? How do we deal with random effects in training?:
+
+  Yes, colinear columns get estimates unstable (order the observations are processed changes outcome).
+  Under assumptions (normality of residuals), MLE will outcome the same result as OLS
+
+Explain how {core feature} is done:
+
+  Core feature=linearity between outcome and predictors
+  OLS models the expected mean condition to X.
+
+How many parameters the model has to learn? is is feasible setup?:
+
+  Number of predictors + 1(bias)
+
+
+Evaluation
+-------
+
+How you evaluate quality/performance of your model? Why not metric ______?:
+
+  MSE
+  RMSE
+  R^2
+  ?
+
+How interpretable is the model?:
+
+  A increase in one unit of x, holding others constant, lead to increase of b units in Y
+
+  - Factor strength can be interpreted considering:
+  Predictors have the same scale
+  Residuals are well behaved 
+  Correlated variables coefficients might fight for coefficients
+
+
+Does the model have any meta-parameters and thus require tuning? What are they? How would you choose the best one?:
+
+  No. (only when regularization)
+  It learns b+1 parameters
+
+
+Model selection
+-------
+
+Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
+
+  - Assumptions
+  0. Linear relationship of the expectation in relation to the data
+  1. Independence of residuals ()
+  2. Homoscedasticity of residuals (against predictions and variables)
+  3. Normality of residuals
+
+  "The model for the mean E(y|x)=β0+β1xE(y|x)=β0+β1x might be correct, but the mean may itself be quite unrepresentative of the data (in that much of the data are not behaving like the mean - i.e. the mean may not be a useful descriptor of the conditional distribution)""
+
+  - How to test them:
+  0. Scatter plot ( univariate )
+  1. Fit and evaluate on test data
+  2. Plot histogram of residuals
+  3. Plot predictions x residuals
+
+  - What to do if not true:
+  Transform outcome (dependent residuals, heterosdacity, non-normality)
+  Transform predictors (non-linearity)
+  Add more predictors (non-linearity)
+  Change model (GLM allow modeling any error distribution)
+
+
+What types of data (numerical, categorical etc…) can the model handle? Can the model handle missing data?:
 
 
 
-How to check is the regression model fits the data well?:
+What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
 
+  GLM
+  Random Forest Regressor
+  kNN Regressor
+  ?
+
+Can it learn non-linearities? If so, how so? If not, is there any way around it?:
+
+  Modeling through base-expansions and interactions.
 
 
 
