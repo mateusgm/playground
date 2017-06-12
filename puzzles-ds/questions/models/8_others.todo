@@ -3,6 +3,15 @@
 GLM
 -------
 
+Assumptions:
+
+  The form of the predictor is irrelevant to the choice of family which describes the conditional distribution of the response. Whats relevant here is the relationship between the variance and mean of the response, given the values of the predictors. 
+
+  Lognormal - variance constant to logmean
+  Normal - variance constant to mean
+  Poisson - variance propotional to mean
+  Gamma - (variance proportional to mean squared)
+
 Why do we call it GLM when it's clearly non-linear? (somewhat tricky question, to be asked somewhat humorously---but extremely revealing.):
 
   link( E[y|x] ) = b + Ax 

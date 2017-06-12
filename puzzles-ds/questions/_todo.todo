@@ -3,7 +3,7 @@ Stats:
  ✔ Sampling methods @done (17-06-04 23:38)
  ✔ Purpose of common distributions @done (17-06-04 13:07)
  ✔ Types of biases @done (17-06-04 13:07)
- ☐ Residual analysis (when to transform X x Y, Heteroscedasticity)
+ ✔ Residual analysis (when to transform X x Y, Heteroscedasticity) @done (17-06-11 09:56)
  ☐ Anova
  ☐ Distribution operations (sum, confidence interval building ...)
  ☐ Common tests( chi-squared, t-test, sign test, Kolmogorov-Smirnov )
@@ -17,10 +17,10 @@ ML:
  ✔ Model based clustering @done (17-06-04 23:40)
  ☐ Distance metrics( Hamming distance, Mahalanobis, ... ) 
  ☐ Kernel trick
- ☐ BIC, AIC, Mutual information
+ ✔ BIC, AIC, Mutual information @done (17-06-11 09:56)
  ☐ Bayes error
  ☐ Calibration methods
- ☐ Likelihood
+ ✔ Likelihood @done (17-06-11 09:56)
 
 Math:
  ☐ Proability operations

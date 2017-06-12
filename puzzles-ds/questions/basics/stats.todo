@@ -6,11 +6,22 @@ Inference
 
 What is a P-Value ?:
 
+  Assuming the null hypothesis is true, the probability of observing the effect or worse.
+  Used for hypothesis testing.
+
+  - Cons:
+  Usually interpreted as probability of effect being true
+  Give limited visibility on range of effect
 
 
 How confidence intervals are constructed:
 
+  - CLT
+  Bigger samples: Mean +- 2 * standard deviation
+  Smaller samples: 
 
+  - Bootstrap
+  
 
 Why you standardize:
 
@@ -63,7 +74,7 @@ What is Box-Cox transformation? :
 When to do transformations?:
 
   First, transform the Y variable to achieve homoscedasticity (constant variance). Then, transform the X variable to achieve linearity.
-  
+
   to achieve linearity.
   to achieve homogeneity of variance, that is, constant variance about the regression equation.
   to achieve normality or, at least, symmetry about the regression equation.

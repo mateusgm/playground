@@ -2,36 +2,57 @@
 Feature selection
 -------
 
-How do you select features?:
+How do you select features? What are some good ways for performing feature selection that do not involve exhaustive search?:
 
-  Hypothesis
-  Mutual information: ?
-  Stepwise selection
-  Lasso
+  - EDA
+  
+  - Mutual information
+  Measurethe reduction of uncertainty in Y after observing X. It is the KL distance between the joint density and the product of the individual densities. it measures how much knowing one of these variables reduces uncertainty about the other
+  Cons: biased towards high cardinality features
 
-What are some good ways for performing feature selection that do not involve exhaustive search?
+  - Correlation
+  * Spearman: monolitically rank
+  * Pearson: linear relationship
+
+  - Statistical tests
+  f-test
+  chi squared
+
+  - Stepwise selection
+  
+  - Lasso
+
+  - AIC
+  . -2*ln(likelihood) + 2*k,
+  AIC tries to select the model that most adequately describes an unknown, high dimensional reality
+  the results point to the fact that AIC is too liberal and still frequently prefers a more complex, wrong model over a simpler, true model
+
+  - BIC
+  . -2*ln(likelihood) + ln(N)*k
+  BIC tries to find the TRUE model among the set of candidates
 
 
+What to do with categorical variables of high cardinality?:
 
-How to apply Machine Learning to audio data, images, texts, graphs, etc?
+  1. Clustering on the behaviour you want to capture 
+  2. Learning representations (auto-encoder, pca, matrix factorization, word2vec)
+  3. Replace by informative number (conversion, demand, ...)
+  4. Hashing trick
+  5. Group rare ones
+  6. Replace by frequency on the training set (non-linear methods)
 
+  ? pros and cons
 
-
-What to do with categorical variables of high cardinality?
-
-
-
-Can a feature that doesnt help alone, be useful when another feature is added?
+Can a feature that doesnt help alone, be useful when another feature is added?:
 
 
 
 Regularization
 -------
 
-What is Regularization?:
+What is Regularization and what does it try to solve?:
 
   Regularization is a way of penalizing big coefficients on linear models, to prevent overfitting.
-
   Most of the models follow this equation: B -> min(loss(X,Y|B) + penalty(B))
 
   - Ridge:
@@ -58,21 +79,16 @@ What is Regularization?:
   ?
 
 
-
-Which problem does Regularization tries to solve?:
-
-  Overfitting (complex explanations of the world)
-  Final goal: better generalization to unseen data
-
-
 What is the difference in the outcome (coefficients) between the L1 and L2 norms? (usually I ask them to draw the geometric shape of the functions, just to make sure):
 
+  L1: select
+  L2: shrink
 
-
+  Plot alpha x coefficients
 
 Why (geometrically) does LASSO produce solutions with zero-valued coefficients (as opposed to ridge)?:
 
-
+  ? diamond shape
 
 
 Let us go through the derivation of OLS or Logistic Regression. What happens when we add L2L2 regularization? How do the derivations change? What if we replace L2L2 regularization with L1L1 regularization?:
@@ -83,51 +99,51 @@ Let us go through the derivation of OLS or Logistic Regression. What happens whe
 Evaluation
 -------
 
-How do you evaluate a model?
+How do you evaluate a model?:
 
 
 
-What’s the trade-off between bias and variance?
+What’s the trade-off between bias and variance?:
+
+  E[e] = bias^2 + variance + noise
+
+How do you estimate performance on unseen data?:
 
 
 
-How do you estimate performance on unseen data?
+You have built several different models. How would you select the best one?:
 
 
 
-You have built several different models. How would you select the best one?
+What is sensitivity analysis? Is it better to have low sensitivity and low predictive power?:
 
 
 
-What is sensitivity analysis? Is it better to have low sensitivity and low predictive power?
+How do you perform good cross-validation? What are the options?:
 
 
 
-How do you perform good cross-validation? What are the options?
+How would you convinvce someone else that this method is not overfitting?:
 
 
 
-How would you convinvce someone else that this method is not overfitting?
+What is the difference between holding out a validation set and doing 10-Fold CV?:
 
 
 
-What is the difference between holding out a validation set and doing 10-Fold CV?
+What do you think about the idea of injecting noise in your data set to test the sensitivity of your models?:
 
 
 
-What do you think about the idea of injecting noise in your data set to test the sensitivity of your models?
+Which is better: Too many false positives or too many false negatives?:
 
 
 
-Which is better: Too many false positives or too many false negatives?
+How do you ensure you’re not overfitting with a model?:
 
 
 
-How do you ensure you’re not overfitting with a model?
-
-
-
-Explain what resampling methods are and why they are useful. Also explain their limitations.
+Explain what resampling methods are and why they are useful. Also explain their limitations:
 
 
 
@@ -187,17 +203,40 @@ What are alternatives to gradient descent? Pros and cons?:
 
 How maximum likelihood works?:
 
+  L( theta | data ) = P( data | theta )
+  We can find theta that maximizes the likelihodd (probability of seeing this data, under the theta distribution)
 
+  - Assuming observations are independent
+  L(theta) = product[x]( L(theta) )
+  or
+  L(theta) = sum[x]( ll(x, theta) )
+
+  - Algorithm
+  while B converges
+    sum_ll = sum[x]( ll(theta) )
+    B < max(sum_ll)
 
 Whats the difference between convex vs nonconvex?:
 
+  - Convex
+  we can draw an ininterrupted line between any point in a curve.
+  gradient(curve) = 0 leads to only one solution (only one local minima-maxima)
+
+  - Non convext
+  Numerical optimization that uses gradient arent guaranteed to find global minima
+
+  ? how to detect convexity
 
 
 Is it always bad to have local optima?:
 
+  - Nope.
+  Local optima more often than not is correlated with global optima
+  Time x benefit
 
 
 Whats EM?:
+
 
 
 
@@ -213,24 +252,24 @@ How Monte Carlo can be used for fitting?:
 Data exploration
 -------
 
-How do you summarize the distribution of your data?
+How do you summarize the distribution of your data?:
 
 
 
-How do you handle outliers or data points that skew data?
+How do you handle outliers or data points that skew data?:
 
 
 
-What assumptions can you make? Why and when? (i.e When is it safe to assume "normal")
+What assumptions can you make? Why and when? (i.e When is it safe to assume "normal"):
 
 
-How to efficiently represent 5 dimension in a chart or in a video?
-
-
-
-How would you handle an imbalanced dataset?
+How to efficiently represent 5 dimension in a chart or in a video?:
 
 
 
-How do you handle missing or corrupted data in a dataset?
+How would you handle an imbalanced dataset?:
+
+
+
+How do you handle missing or corrupted data in a dataset?:
 

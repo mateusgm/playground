@@ -5,16 +5,33 @@ Overview
 
 Explain how it works in a few words:
 
-
+  Decision trees works finding successively "cutting" points on the variables that would improve accuracy / information gain.
 
 Whats the metric the model tries to optimize?:
 
+  sum( loss(subtrees) )
+
+  - Accuracy
+  TP + TN / All
+  Problematic with unbalanced data
+  Prone to overfitting, doesnt generalize well to unseen data 
+
+  - Information gain:
+  ? Formula
+  Bias towards features with high number of features
+  Favor splits that generates more homogenuous groups
+
+  - Gini (cross entropy)
+  p(a)*p(1-a)
+
+  Favor splits that generates more homogenuous groups
 
 
 Algorithm / Fitting
 -------
 
 Which method do you use to fit your model?:
+
 
 
 

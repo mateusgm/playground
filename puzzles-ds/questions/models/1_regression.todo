@@ -112,10 +112,24 @@ Evaluation
 
 How you evaluate quality/performance of your model? Why not metric ______?:
 
-  MSE
-  RMSE
-  R^2
-  ?
+  - RMSE
+  How close the predictions are to ground truth?
+  It is sensitive to large errors (you can reach a low RMSE / RMSE only by having both a high precision and no systematic error)
+  has a unit, so super interpretable
+  
+  - R^2
+  1 - MSE/(Y-Ymean)^2   (MSE normalized against mean prediction)
+  How well your selected independent variable(s) explain the variability in your dependent variable(s)?
+  Does not reflect systematic errors. 
+  
+  - R^2 adjusted
+  1 - VAR(predictions)/VAR(observations)
+  Unbiased variance predictions: MSE/n-p-1  (n-p-1 being the degrees of freedom)
+  Here more predictors do punish the model. Expected to be more robust against overfitting.
+
+  - MAE
+  Median estimate (instead of mean)
+  Less sensitive to outliers (like its counterpart median)
 
 How interpretable is the model?:
 
