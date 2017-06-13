@@ -1,0 +1,71 @@
+
+Estimation
+------
+
+What is the Central Limit Theorem? Explain it. Why is it important?:
+
+  The CLT rules that averages of sufficiently large number of samples follow a normal distribution.
+  
+  It's important because its one of the building blocks to estimate values of a population
+  from its samples, such as mean and deviation. Which is used in hypothesis testing and confidence interval building.
+
+
+How to estimate mean/deviation/variance of population from a sample?:
+
+
+
+Hypothesis testing
+------
+
+
+What is a P-Value? How they are distributed?:
+
+  Assuming the null hypothesis is true, the probability of observing the effect or worse.
+  Used for hypothesis testing.
+
+  - Cons:
+  Usually interpreted as probability of effect being true
+  Give limited visibility on range of effect
+
+
+How confidence intervals are constructed:
+
+  - CLT
+  Bigger samples: Mean +- 2 * standard deviation
+  Smaller samples: ...
+
+  - Bootstrap
+  
+
+
+What are the tt, ff, chi and anova tests? When to use it?:
+
+
+
+You applied ANOVA and it says that the means are different. How do you identify the populations where the differences are significant?:
+
+
+
+How would you test if two populations have the same mean? What if you have 3 or 4 populations?:
+
+
+
+Give an example where the median is a better measure than the mean:
+
+  Both: measures central tendency.
+
+  - When is bad:
+  Exponential distribution (book window)
+  Heavy tail skewed distributions (salary)
+  Bimodal distributions (frequency of gym)
+
+  - When is good:
+  Median is sensitive to sample size (small samples it will jump a ot)
+  Linear optimization (mean is the center of OLS )
+  Normal data (more efficient )
+  Resistant to shift changes
+
+
+How to use resampling for hypothesis testing? Have you heard of Permutation Tests?:
+
+

@@ -9,9 +9,9 @@ Explain how it works in a few words:
 
 Whats the metric the model tries to optimize?:
 
+  ? could we repharase like?
   MSE[users] ( rating - predict(rating| neighbor(users),items) )
   MSE[items] ( rating - predict(rating| neighbor(items),items) )
-
 
 
 Algorithm / Fitting
@@ -19,10 +19,23 @@ Algorithm / Fitting
 
 Which method do you use to fit your model?:
 
-  - 
+  - Collaborative filtering
+  Its an approach to learning recommendations, based on behaviour of similar users / items.
+  Its composed of 2 mainstream areas: user based and item based.
+
+  * user based:
+  For every pair of users that rated same items, calculate similarity
+  For k-most similar users, get unseen items and predict what would be the user rating (weighted average of ratings by user similarity).
+  Recommend top k rated items.
+
+  * item based:
+  For every pair of items, get set of users that reviewed both and calculate similarity between items.
+  Without personalization: Recommend k-most similar items
+  With personalization: weight similar items by similarity to user items, recommend k-most.
 
   - Matrix factorization
-  Nonetheless, neighborhood models, which have been dominating most of the collaborative filtering literature, are still expected to be popular due to their practical characteristics - being able to handle new users/ratings without re-training and offering direct explanations to the recommendations.
+
+
 
 What's the complexity?:
 
@@ -79,8 +92,6 @@ Are the predictions calibrated? If not how should they be calibrated?:
 
 
   - Neighborhood models
-  Neighbors are independent
-  Different items should use same neighborhood size
   * instead of using correlation as weight on the sum, let the model learn the weights (linear regression)
 
 
@@ -95,12 +106,18 @@ Model selection
 
 Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
 
+  - Collaborative filtering
+  Neighbors are independent
+  Different items should use same neighborhood size
   Rating of neighbors are representative (rate same stuff)
-  Implicit x explicit
+  ?
 
 What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
 
+  - Filtering
+  being able to handle new users/ratings without re-training offers direct explanations to the recommendations
 
+  ?
 
 Can it learn non-linearities? If so, how so? If not, is there any way around it?:
 

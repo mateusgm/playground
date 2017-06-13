@@ -1,0 +1,152 @@
+Evaluation
+-------
+
+How do you evaluate a model?:
+
+  Select a metric of interest
+  Select a baseline of comparison
+  Cross-validation ( k-fold x train-test-split )
+  Cost analysis
+  AB testing
+
+How do you know if one algorithm is better than other?:
+
+  - Pre-analysis
+  1. Application (random forest x neural nets for image recognition x fraud detection)
+  2. Scalability (what is the size of the problem?)
+  3. Out of core learning (can the algorithm keep on learning?)
+  4. Dataset (missing values? inbalanced? linear relationships?) 
+  5. Bias x variance (sensitivity to changes on the underlying distribution)
+  
+  - Given a problem and a dataset
+  1. Crossvalidation with a common metric
+  2. Analysis of prediction distribution (most metrics are averages)
+  3. Prefer the one with smaller complexity (occam razor)
+  4. Bootstrap and count number of times one is bette 
+  5. Live AB testing
+
+  - Against baseline
+  Classifiers: improvement over base rate (predicting the predominat class)
+  Regression: improvement over predicting the mean
+  Ranking: precision@k improvement over most popular
+
+
+What is better: good data or good models? And how do you define “good”? Is there a universal good model? Are there any models that are definitely not so good?:
+
+  - Good data. Which extreme you would prefer?
+  Handful of features based on domain experts + a linear model.
+  Random features + highly complex model.
+
+  - Also, data defines the upper bound a model can learn
+  (Bayes error). So there is only much one can do within those boundaries -> if you increase data quality, you change Bayes error and maybe step out of local minima.
+
+  - Bayes model is the perfect model, but untratable. What models can do is try to approximate it. So different problems might require different approachs.
+  Is your data categorical or numerical?
+  Whats the imbalance?
+  How much is it spread?
+  Labels are defined?
+  Missing inputs? 
+  How they relate with predictor?
+
+How to define/select metrics?:
+
+  - Things to consider:
+  Problem domain
+  Dataset characteristics (imbalance, data type
+  Goal (what we're trying to opmitize)
+
+  - Regression:
+  MAE
+  R2
+  RMSE
+
+  - Classification:
+  Accuracy
+  Precision
+  Recall
+  Logloss
+  AUC
+
+  - Multiclass:
+  Logloss
+  Classification metrics per class
+  Averages (weighted per class, )
+
+  - Ranking:
+  Precision@k
+  NDSG
+  MAV
+
+  - Clustering:
+  AIC
+  BIC
+  Intra cluster variance
+
+
+What’s the trade-off between bias and variance?:
+
+  - For models based on MSE
+  E[e] = bias^2 + variance + noise
+
+  - MLE
+  ? Likelihood will follow the same pattern
+
+How do you estimate performance on unseen data?:
+
+
+
+You have built several different models. How would you select the best one?:
+
+
+
+What is sensitivity analysis? Is it better to have low sensitivity and low predictive power?:
+
+
+
+How do you perform good cross-validation? What are the options?:
+
+
+
+How would you convince someone else that this method is not overfitting?:
+
+  - Sample not representative
+  
+  
+  - Leaking information from test set
+  
+
+  - Model too complex
+  Compare loss training data x estimate of unseen
+  Estimate: cross validation, holdout set, bootstrap
+  Validation curve (sweet spot: delta == 0, both going down: underfitting, test going up: overfitting)
+
+
+Explain what resampling methods are and why they are useful:
+
+  Resampling methods are tools to help us give better estimates on unseen data.
+
+  - Holdout
+
+  - Crossvalidation
+  Cross-validation is a method to estimate metrics on unseen data. We partition the dataset into k partitions, and use them to train/test the model k times, rotating which partition is used for testing. 
+  Test data is scarce
+  Estimate unseen error with a good bias x variance tradeoff
+  Model selection
+  Computional expensive
+
+  - Bootstrap >
+  take repeated samples with replacement. If you do it many times, it will average the quantity you're estimating.
+  biased estimation of error
+  good for estimated uncertainty for parameters that are tricky to do theoretically (median) 
+
+
+How to do it cross validation the right way?:
+ 
+  sampling method (stratified x non-stratified)
+  your process can be exposed to labels only inside cv
+  number of partitions. Compromise between bias x variance x resources.
+    Low k => high bias, low variance, low resource;
+    High k => low bias (lower bound), high variance, low;
+
+
+

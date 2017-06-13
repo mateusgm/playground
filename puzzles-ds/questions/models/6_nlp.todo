@@ -1,3 +1,10 @@
+Others
+-------
+
+What is latent semantic indexing? What is it used for? What are the specific limitations of the method?:
+  
+  ?
+
 ===========================
 
 Overview
@@ -31,12 +38,30 @@ Pseudo-code (with formulas):
 
 How do you need to prepare the data for the model? (categorical? missing? outliers? scale? variance?):
 
-  TD-IDF
-  n-Grams
-  Stemming
-  tokenization
-  stop words
-  word2vec
+  - Count of words:
+  Count per word (normally picks only the most frequent). Can bias the results towards larger documents.
+
+  - TD-IDF:
+  Term frequency inverse document frequency. Weight the frequency of the term on the document against how frequent it is on the corpus, in the sense that the bigger the frequency in the text and the less popular on the corpus the more signal we have. Weighted against document length, so we dont bias towards big documents.  
+  TDIDF = Count(term|doc)   * log( size(corpus)    )
+             size(doc)             count(doc|term)
+  Cons: vector of the size of the vocabulary.
+
+  - Stemming:
+  Try to break down words into its radical, so we can group similar meaning words together like plays - play - played.
+  Can generate some noise as some words share same radical but are not related like universal and university.
+
+  - Tokenization:
+  Break the text into meaningful standardized tokens - separate words from punctuation, make everything on the same case and etc. 
+
+  - Stop words:
+  Removing prepositions and articles from the text (as they wouldnt allow you to make inferences)
+
+  - n grams
+  Add features with sequences of n words that appear on the text, to learn contextual meaning. For instance "played me" and "played golf" have totally different conotations in terms of negativity.
+
+  - word2vec
+  ?
 
 Does the model have convergence problems? Does it have a random component or will the same training data always generate the same model? How do we deal with random effects in training?:
 

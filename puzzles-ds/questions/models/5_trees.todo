@@ -1,3 +1,4 @@
+
 ===========================
 
 Overview
@@ -7,23 +8,25 @@ Explain how it works in a few words:
 
   Decision trees works finding successively "cutting" points on the variables that would improve accuracy / information gain.
 
+  - Random forest
+
 Whats the metric the model tries to optimize?:
 
   sum( loss(subtrees) )
 
   - Accuracy
-  TP + TN / All
+  Formula: TP + TN / All
   Problematic with unbalanced data
   Prone to overfitting, doesnt generalize well to unseen data 
 
-  - Information gain:
-  ? Formula
+  - Information gain  (cross entropy):
+  Entropy: -sum( p(x)log(p(x)) )
+  IG: entropy(parent) - weighted sum entropy(children)
   Bias towards features with high number of features
   Favor splits that generates more homogenuous groups
 
-  - Gini (cross entropy)
-  p(a)*p(1-a)
-
+  - Gini
+  Formula: 1 - sum[class](p(c)^2)
   Favor splits that generates more homogenuous groups
 
 
@@ -32,8 +35,11 @@ Algorithm / Fitting
 
 Which method do you use to fit your model?:
 
+  - Random forest
+  Ensemble method based on bootstraps
+  Take N bootstrapped samples, for each node take K random features, evaluate information gain for the splits in all of them (which splits to consider?), make the split and proceed. Prediction is average of the N trees (regression, average of leafs, classification majority vote or frequency of class).
 
-
+  - Stopping criterias
 
 What's the complexity?:
 
@@ -53,7 +59,9 @@ Does the model have convergence problems? Does it have a random component or wil
 
 Explain how {core feature} is done:
 
+  - Why multiple trees and bootstrap?
 
+  - Why selecting a subset of variables at each split?
 
 How many parameters the model has to learn? is is feasible setup?:
 
@@ -80,7 +88,16 @@ Are the predictions calibrated? If not how should they be calibrated?:
 
 Is it prone to over-fitting? How do you detect? What can be done about this?:
 
+  - Larger tree
+  Sparcity on the nodes -> less balanced predictions
+  Tend to overfit -> it will adapt to training data (possible learning the noise?)
+  Small changes on dataset change the model
 
+  - Multiple different trees
+  More robust (less variable) solution as its averaging between multiple models
+  Smaller change to capture the noise, as the trees are smaller and prediction is made by majority
+  More expensive to compute and less interpretable
+  Less prone to overfitting
 
 
 Model selection
@@ -93,6 +110,14 @@ Does the model make any important assumptions about the data? When might these b
 
 What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
 
+  - When to use it
+  Multiclass
+  Nonlinear boundaries
+  Small amount of time (good defaults)
+  Lots of missing info
+  Variable importance
+
+  -Other ways to combine trees? What about boosting?
 
 
 Can it learn non-linearities? If so, how so? If not, is there any way around it?:

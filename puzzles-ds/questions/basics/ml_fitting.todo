@@ -1,0 +1,166 @@
+
+What is the difference between supervised learning and unsupervised learning? Give concrete examples:
+
+  Supervised: you have a goal of predicting something that you have on the data (labeled data).
+  Unsupervised: discover patterns.
+
+  Supervised >
+  - Predict prices of stock
+  - Model the probability of disease
+
+  Unsupervised >
+  - Find group of similar users
+  - Find the topic of the text
+
+
+Fitting
+-------
+
+What is the Gradient Descent Method (the intuition is mostly enough)?:
+
+  - Batch
+  Update B to the rate of its steepest direction. 
+  for i in epochs
+    B = B - a * gradient_B( loss(X,y,B)) 
+
+  - Stochastic
+  Estimate B applying the gradient successfully for each instance.
+  for i in epochs
+    data = shuffle(data)
+    for x,y in data
+      B = B - a * gradient_B( loss(x,y,B)) 
+
+Does the Gradient Descent method always converge to the same point?:
+
+  Batched: yes
+  Stochastic: on one epoch yes, normally we shuffle before second, which would mean a different convergence path.
+
+Is it necessary that the Gradient Descent Method will always find the global minima?:
+
+  No, depends on learning rate and convexity of loss function.
+
+  Learning rate: it can oscilate around minima or diverge on big learning rates
+  Non-convex: can be stuck on local minima or saddle points
+
+Common optimizations Gradient Descent?:
+
+  - In general:
+  Adaptive learning rate
+  Batch x min-batch x stochastic
+  Batch normalization (renormalizes coefficients during training)
+  Early stopping
+
+  - Blah
+  Momentum (add fraction of last update to the current)
+  Adagrad (adapts learning rate to parameters )
+  Adadelta( modification to adagrad to prevent monotically decreasing learning rate)
+  Adam ( adapts learning rate and momentum to parameters )
+
+  - For non convexity
+  "As has been shown, SGD usually achieves to find a minimum, but it might take significantly longer than with some of the optimizers, is much more reliant on a robust initialization and annealing schedule, and may get stuck in saddle points rather than local minima"
+
+What are alternatives to gradient descent? Pros and cons?:
+
+  Newton method
+  BFGS
+  L-BFGS
+  IRLSM
+  ?
+
+How maximum likelihood works?:
+
+  L( theta | data ) = P( data | theta )
+  We can find theta that maximizes the likelihodd (probability of seeing this data, under the theta distribution)
+
+  - Assuming observations are independent
+  L(theta) = product[x]( L(theta) )
+  or
+  L(theta) = sum[x]( ll(x, theta) )
+
+  - Algorithm
+  while B converges
+    sum_ll = sum[x]( ll(theta) )
+    B < max(sum_ll)
+
+Whats the difference between convex vs nonconvex?:
+
+  - Convex
+  we can draw an ininterrupted line between any point in a curve.
+  gradient(curve) = 0 leads to only one solution (only one local minima-maxima)
+
+  - Non convext
+  Numerical optimization that uses gradient arent guaranteed to find global minima
+
+  ? how to detect convexity
+
+
+Is it always bad to have local optima? How do you identify it?:
+
+  - Local optimum
+  the algorithm converged to a solution better than neighbors but not necessarily the best.
+
+  - Not always bad
+  Local optima more often than not is correlated with global optima
+  Time x benefit
+
+  - How to detect >
+  algorithm had strong bindings to it initialization state
+  non-convex problem
+
+
+Whats EM?:
+
+
+
+
+How do you tune hyperparameters? Any method beyond grid search?:
+
+
+
+How Monte Carlo can be used for fitting?:
+
+
+
+
+Regularization
+-------
+
+What is Regularization and what does it try to solve? What are the methods? How they compare?:
+
+  Regularization is a way of penalizing big coefficients on linear models, to prevent overfitting.
+  Most of the models follow this equation: B -> min(loss(X,Y|B) + penalty(B))
+
+  - Ridge:
+  y||B||^2
+  A type of shrinkage regularization (it shrinks the coefficients instead of zeroing them)
+  Differentiable (friendly to gradient-based methods)
+  Assumption: Gaussian prior of coefficients
+  Stable 
+
+  - Lasso
+  y||B||
+  Promotes feature selection (correlated coefficients will zero)
+  Assumption: Laplace prior of coefficients
+  Unstable ( 0_4 has the same loss as 2_2 )
+
+  - Elastic Net
+  Weighted lasso and ridge
+  y1||B||  + y2||B||^2
+
+  - Laplace smoothing
+  (n + alpha)/(N + alpha*d)
+  More a smoothing than regularization per se. 
+
+  - Dropout
+  Randomly deactivates neuros on a neural network
+  ?
+
+
+What is the difference in the outcome (coefficients) between the L1 and L2 norms? (usually I ask them to draw the geometric shape of the functions, just to make sure):
+
+  ? why geometry matter?
+
+
+Let us go through the derivation of OLS or Logistic Regression. What happens when we add L2L2 regularization? How do the derivations change? What if we replace L2L2 regularization with L1L1 regularization?:
+
+  ?

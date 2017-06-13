@@ -1,0 +1,92 @@
+
+
+What is the Law of Large Numbers?:
+
+  Given a large number of trials, the frequency of values of a random variable will converge to
+  its probability. 
+
+Explain what a long-tailed distribution is and provide three examples of relevant phenomena that have long tails. Why are they important in classification and regression problems?:
+
+  - In long tailed distributions, a high frequency population is followed by a low frequency population, which gradually tails off asymptotically
+  
+  - Rule of thumb: majority of occurrences (more than half, and when Pareto principles applies, 80%) are accounted for by the first 20% items in the distribution
+
+  - Importance in classification and regression problems:
+  Skewed distribution (training data biased, cant generalize on the long tail in most cased)
+  Which metrics to use? Accuracy paradox (classification), F-score, AUC
+  Issue when using models that make assumptions on the linearity (linear regression): need to apply a monotone transformation on the data (logarithm, square root, sigmoid function…)
+  Issue when sampling: your data becomes even more unbalanced! Using of stratified sampling of random sampling, SMOTE (“Synthetic Minority Over-sampling Technique”, NV Chawla) or anomaly detection approach
+
+
+Give examples of data that does not have a Gaussian distribution, nor log-normal.:
+
+  - Exponential family:
+  Poisson: Common for counts, adding or multiplying poissons still follows poisson
+  Chi-squared: Arises as sum of squared normal variables (so used for variances)
+  Gamma: Right skewed and useful for things with a natural minimum at 0. the time between k events on a poisson process
+  Beta: Defined between 0 and 1, useful for proportions or other quantities that must be between 0 and 1
+  Dirichlet: ?
+  Geometric: number of failures before 1st success (special case of negative binomial)
+  Bernoulli: number of successes with a probability in a trial (special case binomial)
+  Categorical: k possible outcomes with a given probability in a trial (special case multinomial)
+
+  - Relevant:
+  Binomial: how many "successes" out of a given number of independent trials with same probability of "success"
+  Multinomial: ?
+  Negative binomial: counts with mininum 0 (number of failures before k success)
+  Exponential: the time between events on a poisson process
+  Student's t: ?
+  Uniform: ? 
+  Hypergeometric: ?
+
+  - Conjugates:
+  Beta -> binomial   (single probability)
+  Gamma -> poisson   (non-negative numbers)
+  Dirichlet -> multinomial  (vector of probabilities)
+
+  - Generalization:
+  Binomial -> bernouli
+  Multinomial -> categorical
+  Dirichlet -> beta
+  Gamma -> exponential
+
+
+
+How would you construct a metric on probability space, so you can start doing complicated things like L2 norm etc.?:
+
+
+
+
+Bayes
+-----
+
+Whats a join, conditional and a marginal distribution?:
+
+  Joint: P(x,y)
+  Condition: P(y|x)
+  Marginal: P(x) = sum[y_i](P(x|y))
+
+Whats bayes analysis?:
+
+  - posterior -> prior * likelihood / evidence
+  P(y|x) = p(y) * p(x|y) / p(x)
+
+  - These rules of thumb follow directly from the nature of the Bayesian analysis procedure:
+  If the prior is uninformative, the posterior is very much determined by the data (the posterior is data-driven)
+  If the prior is informative, the posterior is a mixture of the prior and the data
+  The more informative the prior, the more data you need to "change" your beliefs, so to speak because the posterior is very much driven by the prior information
+  If you have a lot of data, the data will dominate the posterior distribution (they will overwhelm the prior)
+  
+  - Conjugates:
+  Beta -> binomial   (single probability)
+  Gamma -> poisson   (non-negative numbers)
+  Dirichlet -> multinomial  (vector of probabilities)
+
+Whats a conjugate distribution?:
+
+  If prior and posterior are on the same family, they're called conjugate distributions. (that will be used in relation to a likelihood distribution)
+
+  p(y) is the conjugate prior to p(x|y) if p(x,y) share the same distribution as p(x,y)
+  p(x,y) = p(x|y) * p(y)
+
+  if you've seen a lot of data already, then one more datapoint shouldn't change your understanding of the world too drastically.  If, on the other hand, you've seen relatively little data, then a single datapoint could influence your beliefs significantly.  This intuition is captured by the form of the conjugate prior.

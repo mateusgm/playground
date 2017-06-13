@@ -1,0 +1,55 @@
+
+
+28. Infection rates at a hospital above a 1 infection per 100 person days at risk are considered high. An hospital had 10 infections over the last 1787 person days at risk. Give the p-value of the correct one-sided test of whether the hospital is below the standard:
+
+  high > 1/100
+  Probability of observing something below than standard
+  CDF_poisson(k=10, u=1780*0.01) = 0.03
+
+
+
+32: you are running for office and your pollster polled hundred people. 56 of them claimed they will vote for you. Can you relax?:
+
+  H0=0.5 
+  Ha=0.56
+
+  - By interval
+  H0 = 50 +- 10
+  H1 = 56 +- 9.92
+  
+  - By hypothesis
+  CDF -> 10%
+
+33: Geiger counter records 100 radioactive decays in 5 minutes. Find an approximate 95% interval for the number of decays per hour.:
+
+  ?
+
+
+34: The homicide rate in Scotland fell last year to 99 from 115 the year before. Is this reported change really networthy?:
+
+  h0 = 115
+  hA = 99
+
+  p_Poisson = CDF(k=99, u=115) ~7%
+
+37: In a population of interest, a sample of 9 men yielded a sample average brain volume of 1,100cc and a standard deviation of 30cc. What is a 95% Student’s T confidence interval for the mean brain volume in this new population?:
+
+  stderr = 30/3 = 10
+  1100 +- 10*multiplier
+
+
+38: A diet pill is given to 9 subjects over six weeks. The average difference in weight (follow up - baseline) is -2 pounds. What would the standard deviation of the difference in weight have to be for the upper endpoint of the 95% T confidence interval to touch 0?:
+
+  -2 / sq(9) = -0.667
+  multiplier = 2 / x
+
+
+39. In a study of emergency room waiting times, investigators consider a new and the standard triage systems. To test the systems, administrators selected 20 nights and randomly assigned the new triage system to be used on 10 nights and the standard system on the remaining 10 nights. They calculated the nightly median waiting time (MWT) to see a physician. The average MWT for the new system was 3 hours with a variance of 0.60 while the average MWT for the old system was 5 hours with a variance of 0.68. Consider the 95% confidence interval estimate for the differences of the mean MWT associated with the new system. Assume a constant variance. What is the interval? Subtract in this order (New System - Old System).:
+
+  ...
+
+
+40. To further test the hospital triage system, administrators selected 200 nights and randomly assigned a new triage system to be used on 100 nights and a standard system on the remaining 100 nights. They calculated the nightly median waiting time (MWT) to see a physician. The average MWT for the new system was 4 hours with a standard deviation of 0.5 hours while the average MWT for the old system was 6 hours with a standard deviation of 2 hours. Consider the hypothesis of a decrease in the mean MWT associated with the new treatment. What does the 95% independent group confidence interval with unequal variances suggest vis a vis this hypothesis? (Because there’s so many observations per group, just use the Z quantile instead of the T.):
+
+  ...
+  

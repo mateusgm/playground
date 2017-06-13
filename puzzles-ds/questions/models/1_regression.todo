@@ -1,4 +1,27 @@
 
+GLM
+-------
+
+Assumptions:
+
+  The form of the predictor is irrelevant to the choice of family which describes the conditional distribution of the response. Whats relevant here is the relationship between the variance and mean of the response, given the values of the predictors. 
+
+  Lognormal - variance constant to logmean
+  Normal - variance constant to mean
+  Poisson - variance propotional to mean
+  Gamma - variance proportional to mean squared
+
+Why do we call it GLM when it's clearly non-linear? (somewhat tricky question, to be asked somewhat humorously---but extremely revealing.):
+
+  link( E[y|x] ) = b + Ax 
+
+
+Why do we need/want the bias term?:
+
+  It allow modeling things that doesnt have mean zero.
+  Bias term is the offset from zero.
+
+
 
 Other (inference)
 ------
@@ -18,18 +41,24 @@ How to residual analysis? How to correct for anything you find?:
 
 What is collinearity and what to do with it?:
 
-  One or more predictors can be expressed as a linear combination of other preditors.
-  Theresponse is already explained by other variables, making the model instable.
+  - Collinearity/Multicollinearity:
+  In multiple regression: when two or more variables are highly correlated
 
-  - How to detect?
-  Variance of parameters with changes on the data
-  Add one predictor at a time
+  - Effects
+  It doesn’t affect the model as a whole, doesn’t bias results
+  The standard errors of the regression coefficients of the affected variables tend to be large
+  Hypothesis testing would be messed up (cant determine significant coefficients)
+  Leads to overfitting
 
-  - How to treat
-  1. Extract latent variables ( PCA, representation learning )
-  2. Regularization ( ridge )
-  3. Remove predictors
-  4. Get more data
+  - Remove multicollinearity:
+  Drop some of affected variables
+  Combine the affected variables
+  Regularization
+
+  - Detection of multicollinearity:
+  Large changes in the individual coefficients when a predictor variable is added or deleted
+  Insignificant regression coefficients for the affected predictors but a rejection of the joint
+  hypothesis that those coefficients are all zero (F-test)
 
 
 How does the variance of the error term change with the number of predictors, in OLS?:
@@ -159,6 +188,12 @@ Does the model make any important assumptions about the data? When might these b
   3. Normality of residuals
 
   "The model for the mean E(y|x)=β0+β1xE(y|x)=β0+β1x might be correct, but the mean may itself be quite unrepresentative of the data (in that much of the data are not behaving like the mean - i.e. the mean may not be a useful descriptor of the conditional distribution)""
+
+  - Note:
+  Common mythology: linear regression doesn’t assume anything about the distributions of xx and yy
+  It only makes assumptions about the distribution of the residuals
+  And this is only needed for statistical tests to be valid
+  Regression can be applied to many purposes, even if the errors are not normally distributed
 
   - How to test them:
   0. Scatter plot ( univariate )

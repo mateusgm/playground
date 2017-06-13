@@ -1,60 +1,27 @@
 
+What are the drawbacks of linear model?:
 
-GLM
--------
+  - Strong Assumptions:
+  Linearity
+  Independence of residuals
+  Homogenity variance of residuals (homodescacity)
+  Normality of residuals
 
-Assumptions:
+  - Benefits
+  Resistent to changes on the data (low variance)
+  Simple to compute
+  Can be solved with out of core methods
+  Weel study and widely know
 
-  The form of the predictor is irrelevant to the choice of family which describes the conditional distribution of the response. Whats relevant here is the relationship between the variance and mean of the response, given the values of the predictors. 
+  - Drawbacks
+  Strong assumptions
+  Only linear relationships (although can be tweaked with interactions and base expansions)
+  High bias method (compared to more complex counter parts)
 
-  Lognormal - variance constant to logmean
-  Normal - variance constant to mean
-  Poisson - variance propotional to mean
-  Gamma - (variance proportional to mean squared)
-
-Why do we call it GLM when it's clearly non-linear? (somewhat tricky question, to be asked somewhat humorously---but extremely revealing.):
-
-  link( E[y|x] ) = b + Ax 
-
-
-
-How you can fit non-linear relations between X (say, Age) and Y (say, Income) into a Linear Model? - I also expect candidates to show me mathematically the marginal effect of X on Y based on their proposed solution.:
-
-
-Why do we need/want the bias term?:
-
-  It allow modeling things that doesnt have mean zero.
-  Bias term is the offset from zero.
-
-
-Random Forest
-------
-
-How a tree is grown
-
-
-
-Purpose of growing a forrest
-
-
-
-Purpose of selecting a subset of variables at each split
-
-
-
-How pruning works
-
-
-
-How variable importance works
-
-
-On what type of ensemble technique is a random forest based? What particular limitation does it try to address?
-
-
-
-Other ways to combine trees? What about boosting?
-
+  - Alternatives
+  GLM (extend the concept to learn response the follow other distributions)
+  Trees
+  Networks (extremely powerful, but prone to overfitting)
 
 
 
@@ -102,6 +69,8 @@ What is a kernel? Explain the Kernel trick
 
 Which kernels do you know? How to choose a kernel?
 
+
+Is it beneficial to perform dimensionality reduction before fitting an SVM? Why or why not?
 
 
 

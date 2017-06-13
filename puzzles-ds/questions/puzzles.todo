@@ -30,6 +30,7 @@ The x and y are two random variables and their standard errors are known. How ca
 
 
 
+How do you take millions of users with 100’s transactions each, amongst 10k’s of products and group the users together in meaningful segments?:
 
 Certain third party data providers (DP1, DP2 ...) will identify cookie_ids as belonging to a specific demographic segment, say DP1_S1 = F35-44. To test the accuracy of this assignment, random samples of cookie_ids in these segments are measured against an industry standard source of "ground truth". This will yield data like "40% of the cookie_ids that DP1 identifies as in S1 are actually (according to "ground truth") in F35-44" and "30% of the cookie_ids that DP2 identifies as in S5 are actually (according to "ground truth") in F35-44". Given the above, what is the probability that a cookie_id that is in both DP1_S1 and DP2_S5 will be found to be in F35-44 according to the industry standard source of ground truth?
 
@@ -88,3 +89,32 @@ How would you suggest followers on Twitter?
 
 How to apply Machine Learning to audio data, images, texts, graphs, etc?
 
+How do you test whether a new credit risk scoring model works?:
+
+  - What i'd expect: the higher the score, the higher the default rate
+  Problem: we have data only on people that previous algorithm didnt consider superbad
+  What we're trying to maximize: profit.
+      E(profit|model) = -p(default|model)*credit + p(~default|model)*profit. Where P(default) = FNR and P(~default) = TNR
+  Decision: While discovering more true positives is good, the cost of a false negative (not detecting a bad application) is higher than the cost of a false positive (rejecting a good application), so we might tend towards recall.
+
+  - Offline analysis >
+  1. Run in a dataset not used for training and get offline metric (cross entropy)
+  2. Calibration curve ( probability x % of predicted )
+  3. PR curve (decide the threshold)
+
+  - Online analysis: (as our data have selection bias, we cant measure the true impact)
+  1. For a period: AB test on new customers accepting only customer < threshold
+  2. Track default rate (FNR), credit lost (the distribution might be different) and profit 
+  3. Hypothesis testing: whats the proassuming there is no difference.
+  4. Whats the cycle time?
+
+
+10. You have data on the durations of calls to a call center. Generate a plan for how you would code and analyze these data. Explain a plausible scenario for what the distribution of these durations might look like. How could you test, even graphically, whether your expectations are borne out?:
+
+
+  **
+
+
+12. You are compiling a report for user content uploaded every month and notice a spike in uploads in October. In particular, a spike in picture uploads. What might you think is the cause of this, and how would you test it?:
+
+  **

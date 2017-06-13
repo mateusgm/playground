@@ -1,48 +1,11 @@
-Dimensionality
-------
-
-1. What is the curse of dimensionality?:
-
-  
-
-2. What is the difference between density-sparse data and dimensionally-sparse data?:
-
-
-
-3. What does "higher dimensionality" imply when applying textbook clustering algorithms developed for low dimension metric spaces to, say, numerical text analysis? Think of using cluster density to identify "good" clusters.
-
-
-
-What is the purpose of dimensionality reduction and why do we need it?
-
-
-
-Are dimensionality reduction techniques supervised or not? Are all of them are (un)supervised?
-
-
-
-What ways of reducing dimensionality do you know?
-
-
-
-Is feature selection a dimensionality reduction technique?
-
-
-
-What is the difference between feature selection and feature extraction?
-
-
-
-Is it beneficial to perform dimensionality reduction before fitting an SVM? Why or why not?
-
-
-=========================== PCA
+===========================
 
 Overview
 ------
 
 Explain how it works in a few words:
 
+ PCA is a dimensionality reduction technique where we try to explain the most of the information on the original data with K latent vectors (uncorrelated variables).
 
 
 Whats the metric the model tries to optimize?:
@@ -54,6 +17,11 @@ Algorithm / Fitting
 
 Which method do you use to fit your model?:
 
+  Algorithm >
+  1) Preprocessing (standardization): PCA is sensitive to the relative scaling of the original variable
+  2) Compute covariance matrix ΣΣ
+  3) Compute eigenvectors of ΣΣ
+  4) Choose kk principal components so as to retain xx% of the variance (typically x=99x=99)
 
 
 What's the complexity?:
@@ -66,6 +34,10 @@ Pseudo-code (with formulas):
 
 How do you need to prepare the data for the model? (categorical? missing? outliers? scale? variance?):
 
+  - Why do we need to center data for PCA and what can happen if we don’t do it?
+
+  
+  - Do we need to normalize data for PCA? Why?
 
 
 Does the model have convergence problems? Does it have a random component or will the same training data always generate the same model? How do we deal with random effects in training?:
@@ -74,6 +46,9 @@ Does the model have convergence problems? Does it have a random component or wil
 
 Explain how {core feature} is done:
 
+  - What is an eigenvalue and eigenvector? 
+  - What is Eigenvalue Decomposition or The Spectral Theorem
+  - What is Singular Value Decomposition?
 
 
 How many parameters the model has to learn? is is feasible setup?:
@@ -109,20 +84,28 @@ Model selection
 
 Does the model make any important assumptions about the data? When might these be unrealistic? How do we examine the data to test whether these assumptions are satisfied?:
 
-  - Why do we need to center data for PCA and what can happen if we don’t do it?
-  - Do we need to normalize data for PCA? Why?
+
 
 
 What alternative models might we use for the same type of problem that this one attempts to solve, and how does it compare to those?:
 
+  - Limitations >
+  PCA is not scale invariant
+  The directions with largest variance are assumed to be of most interest
+  Only considers orthogonal transformations (rotations) of the original variables
+  PCA is only based on the mean vector and covariance matrix. Some distributions (multivariate normal) are characterized by this but some are not
+  If the variables are correlated, PCA can achieve dimension reduction. If not, PCA just orders them according to their variances
+
   - How is it related to eigenvalue decomposition (EVD)?
+
   - How will you use SVD to perform PCA? When SVD is better than EVD for PCA?
+  
   - What are the differences between Factor Analysis and Principal Component Analysis?
 
 
 Can it learn non-linearities? If so, how so? If not, is there any way around it?:
 
-  - Is it learn?
+  - Is it linear?
 
 
 

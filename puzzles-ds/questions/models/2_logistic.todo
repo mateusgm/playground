@@ -13,7 +13,39 @@ What’s the difference between a generative and discriminative model?:
 What's bayes error and why does it matter?:
 
 
-  
+
+Why is naive Bayes normally bad? How would you improve a spam detection algorithm that uses naive Bayes?:
+
+  - Strong assumption: feature independence given labels.
+  P ( y | x) = P ( x | y) = PR( P (x_i|y) ) * P(y)
+               P ( x )      P(x)
+  - Pseudocode:
+  Count( label )
+  Categorical: Count( feature_value & label) / Count( label )
+  Numerical: ll( value, mean(feature|label), std(feature|label) ) -> assumption of distribution
+
+  - Laplace smoothing: (when rare features n -> 0 )
+  n + k
+  N + k*d
+
+  - Is it using TF-IDF? Count vectorizer?
+  Bin features ( denser data )
+  Extract independent vectors
+
+
+Explain what a false positive and a false negative are. Examples:
+
+  FP: positive result when there is no effect (good precision)
+  FN: negative result when there was a effect (good recall)
+
+  When false positives are more important than false negatives >
+  - In a non-contagious disease, where treatment delay doesn’t have any long-term consequences but the treatment itself is grueling
+  - HIV test: psychological impact
+
+  When false negatives are more important than false positives >
+  - If early treatment is important for good outcomes
+  - In quality control: a defective item passes through the cracks!
+  - Software testing: a test to catch a virus has failed
 
 
 ===========================
@@ -76,7 +108,7 @@ How many parameters the model has to learn? is is feasible setup?:
 Evaluation
 -------
 
-How you evaluate quality/performance of your model? Why not metric ______?:
+How you evaluate quality/performance of your model? How the metrics are calculated? Why not metric ______?:
 
   - Log loss
 
@@ -93,8 +125,14 @@ How you evaluate quality/performance of your model? Why not metric ______?:
   Average accross all thresholds (summarizes areas that you'd never go)
   Insensitive to calibration (doesnt responds to changes in scale of mispredictions)
 
-  - Precision x recall
-
+  - Precision x recall 
+  - lr x baseline (most frequent class)
+  - response chart 
+  - calibration curve
+  
+  - Why not MSE? 
+  Logloss better penalizes mispredictions on the 0-1 interval
+  If you think probabilistic, MSE its proportional to likelihood of a gaussian, while logloss for a binomial. This matches GLM framework.
 
 How interpretable is the model?:
 

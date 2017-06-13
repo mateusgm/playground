@@ -19,6 +19,9 @@ What distance metrics can be used? Does the algorithm needs any tweaks?:
   mean is appropriate only for Euclidean distance.
   Calculate the item with least squared distance to all others cluster items
 
+3. What does "higher dimensionality" imply when applying textbook clustering algorithms developed for low dimension metric spaces to, say, numerical text analysis? Think of using cluster density to identify "good" clusters.:
+
+
 
 ===========================
 
