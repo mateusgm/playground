@@ -74,8 +74,8 @@ How to define/select metrics?:
 
   - Ranking:
   Precision@k
-  NDSG
-  MAV
+  ? NDSG
+  ? MAV
 
   - Clustering:
   AIC

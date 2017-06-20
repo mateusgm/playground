@@ -13,13 +13,20 @@ How do you find/handle outliers or data points that skew data?:
 What assumptions can you make? Why and when? (i.e When is it safe to assume "normal"):
 
 
+
 How to efficiently represent 5 dimension in a chart or in a video?:
 
-
+  3 axis + shape + color
+  Project dimensions to or 2
 
 How would you handle an imbalanced dataset?:
 
-
+  Try to model and see if there is a problem
+  Sufficient data?
+  Negative downsample
+  Fancy downsampling
+  Different weights
+  Rephrase the problem
 
 How do you handle missing or corrupted data in a dataset?:
 
@@ -39,6 +46,7 @@ Dimensionality
 
 What is the curse of dimensionality?:
 
+  Uniform points: distance between them increases as dimension increases
 
 
 What is the difference between density-sparse data and dimensionally-sparse data?:
@@ -59,7 +67,6 @@ Data shape
 Explaing power transforms:
 
 
-
 What is Box-Cox transformation? :
 
 
@@ -70,6 +77,7 @@ When to do transformations?:
   to achieve linearity.
   to achieve homogeneity of variance, that is, constant variance about the regression equation.
   to achieve normality or, at least, symmetry about the regression equation.
+
   A transformation that achieves one of these goals often ends up achieving all three. This sometimes happens because when data have a multivariate normal distribution, the linearity of the regression and homogeneity follow automatically.
 
 How would you turn unstructured data into structured data?:
@@ -85,32 +93,42 @@ Feature selection
 
 How do you select features? What are some good ways for performing feature selection that do not involve exhaustive search?:
 
-  - Mutual information
+  - Pre computed statistics
+  * Mutual information
   Measure the reduction of uncertainty in Y after observing X. It is the KL distance between the joint density and the product of the individual densities. it measures how much knowing one of these variables reduces uncertainty about the other
   Cons: biased towards high cardinality features
 
-  - Correlation
-  * Spearman: monolitically rank
-  * Pearson: linear relationship
+  * Spearman:
+  monolitically rank
+  
+  * Pearson:
+  linear relationship
 
-  - Statistical tests
+  * tests:
   f-test
   chi squared
 
-  - Stepwise selection
-  
-  - Lasso
+  - Based on model (compared against validation set)
 
-  - AIC
+  * Stepwise selection
+
+  
+  * Lasso
+
+
+  - Penalization of complexity
+
+  * R^2 adj
+
+  * AIC
   . -2*ln(likelihood) + 2*k,
   AIC tries to select the model that most adequately describes an unknown, high dimensional reality
   the results point to the fact that AIC is too liberal and still frequently prefers a more complex, wrong model over a simpler, true model
 
-  - BIC
+  * BIC
   . -2*ln(likelihood) + ln(N)*k
   BIC tries to find the TRUE model among the set of candidates
 
-  - injecting noise in your data set
 
 What to do with categorical variables of high cardinality?:
 

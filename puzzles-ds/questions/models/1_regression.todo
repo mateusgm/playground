@@ -2,7 +2,7 @@
 GLM
 -------
 
-Assumptions:
+How to choose distribution and link?:
 
   The form of the predictor is irrelevant to the choice of family which describes the conditional distribution of the response. Whats relevant here is the relationship between the variance and mean of the response, given the values of the predictors. 
 
@@ -64,7 +64,7 @@ What is collinearity and what to do with it?:
 How does the variance of the error term change with the number of predictors, in OLS?:
 
   The error should decrease or stay constant (more explanation power)
-  Under Gauss-Markov theorem, the variance can be estimate by
+  Under Gauss-Markov (errors with zero expectation, uncorrelated and equal variance) theorem, OLS is the best (in respect to variance) predictor and the variance can be estimate by
     var(e) ~ e^2 / (n-k-1)
   So we cant say
 
@@ -218,6 +218,30 @@ What alternative models might we use for the same type of problem that this one 
   Random Forest Regressor
   kNN Regressor
   ?
+  
+  - Strong Assumptions:
+  Linearity
+  Independence of residuals
+  Homogenity variance of residuals (homodescacity)
+  Normality of residuals
+
+  - Benefits
+  Resistent to changes on the data (low variance)
+  Simple to compute
+  Can be solved with out of core methods
+  Weel study and widely know
+
+  - Drawbacks
+  Strong assumptions
+  Only linear relationships (although can be tweaked with interactions and base expansions)
+  High bias method (compared to more complex counter parts)
+
+  - Alternatives
+  GLM (extend the concept to learn response the follow other distributions)
+  Trees
+  Networks (extremely powerful, but prone to overfitting)
+
+
 
 Can it learn non-linearities? If so, how so? If not, is there any way around it?:
 

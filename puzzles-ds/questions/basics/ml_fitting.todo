@@ -23,6 +23,9 @@ What is the Gradient Descent Method (the intuition is mostly enough)?:
   for i in epochs
     B = B - a * gradient_B( loss(X,y,B)) 
 
+  gradient mse: (h(x) - y)x   (bias has no x)
+  gradient cross entropy: (y - p(x))
+
   - Stochastic
   Estimate B applying the gradient successfully for each instance.
   for i in epochs
@@ -46,18 +49,23 @@ Common optimizations Gradient Descent?:
 
   - In general:
   Adaptive learning rate
-  Batch x min-batch x stochastic
-  Batch normalization (renormalizes coefficients during training)
+  Batch x mini-batch x stochastic
   Early stopping
 
   - Blah
-  Momentum (add fraction of last update to the current)
+  * adjust learning rate per parameter
   Adagrad (adapts learning rate to parameters )
   Adadelta( modification to adagrad to prevent monotically decreasing learning rate)
+  
+  * add momentum 
+  add fraction of last update to the current)
   Adam ( adapts learning rate and momentum to parameters )
 
   - For non convexity
   "As has been shown, SGD usually achieves to find a minimum, but it might take significantly longer than with some of the optimizers, is much more reliant on a robust initialization and annealing schedule, and may get stuck in saddle points rather than local minima"
+
+  - ?
+  Batch normalization (renormalizes coefficients during training)
 
 What are alternatives to gradient descent? Pros and cons?:
 
@@ -73,9 +81,9 @@ How maximum likelihood works?:
   We can find theta that maximizes the likelihodd (probability of seeing this data, under the theta distribution)
 
   - Assuming observations are independent
-  L(theta) = product[x]( L(theta) )
+  L(theta;x) = product[x]( p(x|theta) )
   or
-  L(theta) = sum[x]( ll(x, theta) )
+  L(theta;x) = sum[x]( p(x|theta) )
 
   - Algorithm
   while B converges

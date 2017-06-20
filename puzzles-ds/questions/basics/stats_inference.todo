@@ -27,6 +27,8 @@ What is a P-Value? How they are distributed?:
   Usually interpreted as probability of effect being true
   Give limited visibility on range of effect
 
+  - Distribution
+  Uniform for null hypothesis
 
 How confidence intervals are constructed:
 
@@ -35,7 +37,8 @@ How confidence intervals are constructed:
   Smaller samples: ...
 
   - Bootstrap
-  
+  Take the mean of N bootstrap samples.
+  Mean(mean) +- quantiles 
 
 
 What are the tt, ff, chi and anova tests? When to use it?:
@@ -48,6 +51,10 @@ You applied ANOVA and it says that the means are different. How do you identify 
 
 How would you test if two populations have the same mean? What if you have 3 or 4 populations?:
 
+  Difference is normalish
+  Mean = sum(means)
+  var = sum(var)
+  H0 = difference is zero
 
 
 Give an example where the median is a better measure than the mean:

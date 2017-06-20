@@ -13,7 +13,7 @@ Explain what a long-tailed distribution is and provide three examples of relevan
 
   - Importance in classification and regression problems:
   Skewed distribution (training data biased, cant generalize on the long tail in most cased)
-  Which metrics to use? Accuracy paradox (classification), F-score, AUC
+  Which metrics to use? 
   Issue when using models that make assumptions on the linearity (linear regression): need to apply a monotone transformation on the data (logarithm, square root, sigmoid function…)
   Issue when sampling: your data becomes even more unbalanced! Using of stratified sampling of random sampling, SMOTE (“Synthetic Minority Over-sampling Technique”, NV Chawla) or anomaly detection approach
 
@@ -32,7 +32,7 @@ Give examples of data that does not have a Gaussian distribution, nor log-normal
 
   - Relevant:
   Binomial: how many "successes" out of a given number of independent trials with same probability of "success"
-  Multinomial: ?
+  Multinomial: generalization binomial, occurrences per outcome with given probabilityes
   Negative binomial: counts with mininum 0 (number of failures before k success)
   Exponential: the time between events on a poisson process
   Student's t: ?
@@ -77,10 +77,6 @@ Whats bayes analysis?:
   The more informative the prior, the more data you need to "change" your beliefs, so to speak because the posterior is very much driven by the prior information
   If you have a lot of data, the data will dominate the posterior distribution (they will overwhelm the prior)
   
-  - Conjugates:
-  Beta -> binomial   (single probability)
-  Gamma -> poisson   (non-negative numbers)
-  Dirichlet -> multinomial  (vector of probabilities)
 
 Whats a conjugate distribution?:
 
@@ -90,3 +86,8 @@ Whats a conjugate distribution?:
   p(x,y) = p(x|y) * p(y)
 
   if you've seen a lot of data already, then one more datapoint shouldn't change your understanding of the world too drastically.  If, on the other hand, you've seen relatively little data, then a single datapoint could influence your beliefs significantly.  This intuition is captured by the form of the conjugate prior.
+
+  - Conjugates:
+  Beta -> binomial   (single probability)
+  Gamma -> poisson   (non-negative numbers)
+  Dirichlet -> multinomial  (vector of probabilities)

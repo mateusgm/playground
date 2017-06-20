@@ -1,29 +1,4 @@
 
-What are the drawbacks of linear model?:
-
-  - Strong Assumptions:
-  Linearity
-  Independence of residuals
-  Homogenity variance of residuals (homodescacity)
-  Normality of residuals
-
-  - Benefits
-  Resistent to changes on the data (low variance)
-  Simple to compute
-  Can be solved with out of core methods
-  Weel study and widely know
-
-  - Drawbacks
-  Strong assumptions
-  Only linear relationships (although can be tweaked with interactions and base expansions)
-  High bias method (compared to more complex counter parts)
-
-  - Alternatives
-  GLM (extend the concept to learn response the follow other distributions)
-  Trees
-  Networks (extremely powerful, but prone to overfitting)
-
-
 
 
 Agglomerative Clustering

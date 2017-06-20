@@ -37,7 +37,7 @@ Sampling
 What is statistical power?:
 
   P( detecting effect | effect exists) ~ P( ~H0 | H1 )
-      ~  effect / sterr
+      ~  effect / stderr
       ~ effect * sq(n) / std
 
   The bigger the effect, the bigger the power.
@@ -83,7 +83,7 @@ How do you control for biases?:
 
   "If entire segments of the population are excluded from a sample, then there are no adjustments that can produce estimates that are representative of the entire population. But if some groups are underrepresented and the degree of underrepresentation can be quantified, then sample weights can correct the bias"
 
-  - How do you control modeling time?
+  - How do you control on modeling time?
   Added confounding factors as independent variables
   Prefer models with lower bias / higher variance
   Prevent overfitting/underfitting
@@ -139,9 +139,10 @@ How do you assess the statistical significance of an insight?:
   - Do hypothesis testing
 
   Hypothesis testing
+  - Which metric? (success? average? count?)
   - Given distribution of data (binomial? normal?)
   - Assuming there is no difference (null hypothesis)
-  - Calculate probability of observing effect of this size or worse
+  - Calculate probability of observing effect of this size (on H0 sample parameters) or worse
   - If < X%, significant, otherwise is not
 
   Statistic significant doesnt mean its business relevant.
