@@ -14,6 +14,7 @@ Math
 - optimization
 
 Clustering
+- Different approachs (variance, density, affinity)
 - Approachs: Kmeans
 - Topic modeling (LDA x NMF x Traditional)
 
