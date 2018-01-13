@@ -1,6 +1,0 @@
-Predict the future
-Guess the present (does the user is flexible on dates?)
-Materialize subjective (what means "cheap"/"beautiful"?)
-Untangle complexity (what people like the most on a given city?)
-Automate human tasks (recommend destinations, highlight reviews)
-Optimize a target variable ()
